@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="styles.css" rel="stylesheet" type="text/css">
+		<title>Change Log</title>
+	</head>
+
+	<body style="width: 700px; margin-left: 50px;">
+		<h1>OES 3 Changes</h1>
+    <h2>Version 3.12.1 (2016-12-26)</h2>
+    <ul>
+    	<li>2016-12-22 Fix missed empty parameter list initialisation in page, newsitem and entry scripts.<li>
+   		<li>2016-12-07 Initialise $dojoParse variable.<li>
+    	<li>2016-07-16 Fix SQL for racesalesitem->findAllByPage function.<li>
+    	<li>2016-07-04 Fix database classes to ensure parameter lists are set up as Array objects where there is a possibility of no parameters.<li>
+      <li>2016-05-15 Fix layout of news update and addition scripts.<li>
+    </ul>
+    <h2>Version 3.12.0 (2016-03-13)</h2>
+    <ul>
+    	<li>2016-03-13 Fix SQL injection and XSS vulnerabilities.<li>
+    </ul>
+    <h2>Version 3.11.0 (2015-12-31)</h2>
+    <ul>
+    	<li>2015-12-31 Hash passwords.<li>
+			<li>2015-12-31 Add missing content for enter4.php page.</li>
+      <li>2015-12-31 Remove deprecated mysql calls and replace with pdo calls via a new class.</li>
+      <li>2015-12-31 Fix undefined field and undefined index errors for newer versions of PHP.</li>
+		</ul>
+		<h2>Version 3.10.2 (2015-03-31)</h2>
+		<ul>
+			<li>2015-02-15 Fix processing of waiting list entries. #4</li>
+			<li>2015-02-15 Prevent incorrect coupon validation errors on waiting list entries. #4</li>
+			<li>2015-01-04 Started to fix undefined index notices for newer versions of PHP. #3</li>
+		</ul>
+		<h2>Version 3.10.1 (2014-09-04)</h2>
+		<ul>
+			<li>2014-08-15 Prevent links from being sent on contact us form.</li>
+			<li>2014-08-15 Add a simple captcha to contact form.</li>
+			<li>2014-07-19 Fix date-dependent pricing.</li>
+			<li>2014-07-19 Fix upgrade script problems.</li>
+		</ul>
+		<h2>Version 3.10.0 (2014-05-29)</h2>
+		<ul>
+			<li>2014-01-23 Add database encoding for text on all applicable entry SQL.</li>
+			<li>2014-02-27 Replace deprecated split function in email routine.</li>
+			<li>2014-02-27 Remove BCC default when specifying contacts for all races.</li>
+			<li>2014-02-27 Fix 'email from' address when entering through the admin entry system.</li>
+			<li>2014-03-10 Increase form field values to 400 characters.</li>
+			<li>2014-03-18 Add sales item processing allowing adhoc sales to be made through the entry system.</li>
+			<li>2014-03-18 Add code to allow free-of-charge race entries to be accepted without calling a payment system.</li>
+			<li>2014-03-30 Add email sender on site so that contacts page can be set for all races properly.</li>
+			<li>2014-04-06 Correct raceno SQL for cross-checking series races for series-wide race numbering.</li>
+			<li>2014-04-11 Add a captcha to the contact form.</li>
+		</ul>
+		<h2>Version 3.0.9 (2013-11-20)</h2>
+		<ul>
+			<li>2013-11-17 Ensure club filter works correctly on old results.</li>
+			<li>2013-11-20 Fix new installation version number to prevent 3.0.7 upgrade running repeatedly.</li>
+		</ul>
+		<h2>Version 3.0.8 (2013-10-30)</h2>
+		<ul>
+			<li>2013-08-18 Encode emails using UTF-8.</li>
+			<li>2013-09-20 Fix Dojo problem with addwaitlist1.php.<li>
+			<li>2013-10-23 Fix FormField object to add '*ONCHIPFEE' control option. Previously, if the Chip Fee field
+			in the standard form was changed, the control setting was lost and the form failed to operate correctly.</li>
+			<li>2013-10-30 Upgrade Dojo version to 1.5.3 to fix problem introduced with Chrome 29.<li>
+		</ul>
+		<h2>Version 3.0.7 (2013-04-10)</h2>
+		<ul>
+			<li>2013-01-11 Add missing transport pricing to pricing routine.</li>
+			<li>2013-01-25 Add payment method table for improved payment flexibility.</li>
+			<li>2013-01-25 Add functionality to allow different terms & conditions pages to be displayed for each race.</li>
+			<li>2013-01-25 Add page copy option to page maintenance.</li>
+			<li>2013-02-02 Fix race copy routine to correctly create new rows for preallocations & race languages.</li>
+			<li>2013-02-04 Remove duplicate transport fields from dbinstall routine.</li>
+			<li>2013-02-04 Add code to ensure Paypal transactions with apostrophes in the name (e.g. O'Connor) go through IPN successfully.</li>
+			<li>2013-02-04 Add code to allow the selection of whether the race entry list is available or not.</li>
+			<li>2013-03-07 Fix a bug in the page translation script which prevented new translations being added and which updated incorrectly too.</li>
+			<li>2013-03-15 Add coupon and race price to race copy routine.</li>
+		</ul>
+		<h2>Version 3.0.6 (2013-01-10)</h2>
+		<ul>
+			<li>Fix installation routine so that upgrades don't run after first installation.</li>
+			<li>Ensure waiting list shows correctly.</li>
+			<li>Ensure entry list shows correctly when the race has clubs switched off.</li>
+			<li>Ensure the race BCC is used in preference to the site BCC on entry email confirmations where set up.</li>
+			<li>Correct the calculation of entry total when entrant is affiliated.</li>
+			<li>Correct unpaid download to output valid XML.</li>
+			<li>Correct transfers so that races for which entries are closed are still shown.</li>
+			<li>Correct entry content block so that the entry list button shows correctly when the race is closed.</li>
+			<li>Change admin entry to allow entry on races with only preallocation places left.</li>
+			<li>Set IE mode to IE8 emulation so that the contact page works correctly (Dojo problem with IE9).</li>
+			<li>Fix so that the club name is shown correctly on emails originating from admin entry.</li>
+			<li>Add processing for discount coupons.</li>
+			<li>Add processing for date-dependent race prices.</li>
+			<li>Fix so that chosen options are shown correctly on emails originating from admin and public entry.</li>
+			<li>Remove all obsolete references to serverfuncs.js.</li>
+			<li>Ensure paid flag is updated correctly from admin update when race numbers aren't being allocated.</li>
+			<li>Ensure footer links are only show for their appropriate site.</li>
+			<li>Allow coupons to be shown as a radio button.</li>
+			<li>Allow online fee to be specified on date-dependent race prices.</li>
+		</ul>
+		<h2>Version 3.0.5 (2011-06-23)</h2>
+		<ul>
+			<li>Fix the 'upload changes from offline entry system' function so that if changes follow additions, the incoming data is correctly reset.</li>
+			<li>Fix the results page so that teams are correctly displayed.</li>
+			<li>Add 'lost' database updates to the initial installation routine (concerning results).</li>
+			<li>TODO: Add check and fix (in db installation routine) for missing database updates.</li>
+			<li>Add clubs download for offline admin system.</li>
+		</ul>
+		<h2>Version 3.0.4 (2011-06-02)</h2>
+		<ul>
+			<li>Change entry screen 4 (shopping basket) so that cheque payment information is not shown when there is no payee on the race.</li>
+			<li>Correct the unpaid Excel download so that XML is properly formed.</li>
+			<li>Correct 'unattached' text on the club pull-down.</li>
+			<li>Correct database installation routine.</li>
+			<li>Show 'upload Paypal CSV' option as not yet implemented on the admin menu.</li>
+			<li>Fix Google Analytics code set up.</li>
+		</ul>
+		<h2>Version 3.0.3 (2011-04-11)</h2>
+		<ul>
+			<li>Correct race feedback display so that only moderated comments are displayed.</li>
+			<li>Correct 3.0.2 database update routine to correctly use the file prefix.</li>
+			<li>Fix intermittent problem with age category calculations.</li>
+			<li>Change entry confirmation emailing routine to suppress date of birth when it isn't part of the form.</li>
+			<li>Add a new function to race object to return future races without feedback (this function is for a 3rd party add-on).</li>
+			<li>Fix content translation routine so that the translated text is saved correctly.</li>
+			<li>Change the public language picker so that more that two languages can be shown.</li>
+			<li>Change the excel download so that dates are encoded correctly for the locale.</li>
+		</ul>
+		<h2>Version 3.0.2 (2011-03-08)</h2>
+		<ul>
+			<li>Add code to switch email to TLS secure when using smtp.gmail.com as the smtp server.</li>
+			<li>Add new tracking feature so that all changes made to entries are logged with timestamps and user information. An enquiry is available from the admin entry list.</li>
+			<li>Ensure text shows correctly on the public entry list when there are no clubs on the entry list.</li>
+			<li>Add age category basis and paid status to race download (for Offline Admin Application).</li>
+			<li>Fix language code lists in translation maintenance scripts to not allow selection of the system language code.</li>
+			<li>Remove translate options from maintenance lists when only one language code set up on the system.</li>
+			<li>Rewrite form processing so that *NOCLEAR works as it was originally intended and is no longer used as a workaround in the first section of the admin form.</li>
+			<li>Correct environment set up so that some strange hosting setups work.</li>
+			<li>Create scripts to support race day updates and additions using the Offline Admin Application.</li>
+			<li>Add code to allow entrants to be either updated or added when changing an entry depending on whether you are changing the details of the same person or changing the entry to a new person.</li>
+			<li>Force URL to lowercase to solve the fact that some (stupid) servers report index.php as Index.php.</li>
+			<li>Fix problem on entrylist when sorting by club (previously gave an error message).</li>
+			<li>Fix problem with uploading Nochex CSVs.</li>
+			<li>Fix calculations in summary reconciliation report.</li>
+		</ul>
+		<h2>Version 3.0.1 (2011-01-20)</h2>
+		<ul>
+			<li>Fix racelang and preallocation objects so that they clone correctly during race copying.</li>
+			<li>Improved form processing when *NOCLEAR specified for memo and radio button fields.</li>
+			<li>Correct formfield object so that formatting conditions agree with the database.</li>
+			<li>Change contacts to allow non-race specific contacts. This requires that the entryBCC field is completed on the site so that the email sending routine has a 'sender'.</li>
+			<li>Fix contacts content block so that the relevant contact is selected correctly.</li>
+			<li>Add code in database object to set MySQL session into non-strict mode.</li>
+			<li>Changes to database install to remove duplicate content rows on the support confirmation page.</li>
+			<li>Change transfer process to correctly assign revised age category codes where necessary and to correctly output the original entry data to the transfer table.</li>
+			<li>Change the public entry form so that the ad-hoc charity amount field is not shown for transfers and changes.</li>
+			<li>Change the public entry form so that the club selection option works correctly for transfers and changes and also so that affiliated entries cannot be changed or transfered to unaffiliated ones.</li>
+			<li>Allow both clubs and teams to be enabled for a race.</li>
+			<li>Add a 'show on admin form only' option to formfield maintenance and change public and admin entry forms appropriately.</li>
+			<li>Add a range of valid values to formfield maintenance and change public and admin entry forms appropriately. This only currently works for numeric form fields.</li>
+			<li>Fixed problem with the transfer/change process whereby club and affiliation status were not recorded properly.</li>
+			<li>Fixed validation in the transfer/change process so that affiliated entries cannot be transferred/changed to unaffiliated ones.</li>
+			<li>Fixed the user registration system so that the whole registration process works correctly.</li>
+			<li>Changed race maintenance so that a race limit can be set and race numbers can be generated even when race numbers are now allocated automatically.</li>
+			<li>Changed admin entry so that race numbers can be allocated manually regardless of the state of the 'allocate numbers' setting.</li>
+			<li>Fixed allocation of age grading in transfer/change process.</li>
+			<li>Changed the transfer process so that an entrant database row is created for the transferee when the transfer is confirmed.</li>
+			<li>Fixed email problem where transfer/change/confirmation emails were showing the club affiliation status wrongly.</li>
+			<li>Removed the default on the first page of the transfer/change process so that users have to decide what they are doing.</li>
+			<li>Fixed email problem with entries via the admin system where completely blank emails were being sent.</li>
+			<li>Add relevance settings for database columns so it can be specified whether columns are relevant to entrants, tranfers and/or entries thereby removing unnecessary database use.</li>
+			<li>Add persist settings for database columns so that the operation of columns through transfers and changes can be controlled.</li>
+			<li>Added a charitable donation column to the base database group. This is disabled by default.</li>
+			<li>Changed CSS to make Dojo textarea fonts compliant with other form widget fonts.</li>
+			<li>Changed CSS to prevent tinymce styles conflicting with base OES styles.</li>
+			<li>Open up database column maintenance so that the columns for both system and enabled database groups can be viewed and the new persist checkboxes changed.</li>
+			<li>Changed entry confirmation email so that racenumbers are shown if they are present regardless of the state of the 'allocate numbers' setting.</li>
+			<li>Fixed the entry list so that unattached runners appear at the end of the list when sorting by club.</li>
+			<li>Various CSS changes to improve customisation possibilities.</li>
+			<li>Added authorisation to the public pages so that individual public pages can be secured.</li>
+			<li>Added timing details to race maintenance so that different timed race phases can be named in the results system.</li>
+			<li>Changed the results enquiry to display phased times as available and added sorts based on them.</li>
+			<li>Changed the Excel/Offline Admin system download to remove concatenated fields which were previously used for prize allocation in the Offline Admin system. The Offline admin system now generates all the columns it needs on-the-fly.</li>
+		</ul>
+		<h1>Offline Administration System 3 Changes</h1>
+		<h2>Version 3.0.1 (2010-01-20)</h2>
+		<ul>
+			<li>Complete re-write of the entry reporting system. Entry reports are now configurable and new reports can be created.</li>
+			<li>Complete re-write of the prize allocation system to remove hard-coded columns. Prize allocation can now be based on any entry column, including user-added columns.</li>
+			<li>Allow up to 6 timing phases in the results system and allow the official time to be automatically calculated from the total of the phase times.</li>
+			<li>Changes to cope with clubs and teams being enabled.</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<?php
+/* ************************************************************************
+' popup.php -- Display UKA card details
+'
+' Copyright (c) 1999-2008 The openEntrySystem Project Team
+'
+'		This library is free software; you can redistribute it and/or
+'		modify it under the terms of the GNU Lesser General Public
+'		License as published by the Free Software Foundation; either
+'		version 2.1 of the License, or (at your option) any later version.
+'
+'		This library is distributed in the hope that it will be useful,
+'		but WITHOUT ANY WARRANTY; without even the implied warranty of
+'		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+'		Lesser General Public License for more details.
+'
+'		You should have received a copy of the GNU Lesser General Public
+'		License along with this library; if not, write to the Free Software
+'		Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+'
+'		For full terms see the file licence.txt.
+'
+'	Version: 1.0
+'	Last Modified By:
+'		betap 2008-07-01 09:00:00
+'		Apply GPL and general preparation for release.
+'
+' ************************************************************************ */
+require_once('includes/initialise.php');
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title><?php echo $currentSite->title; ?></title>
+		<link href="css/styles.css" rel="stylesheet" type="text/css">
+		<?php
+		include(LIB_PATH. "style_overrides.php"); ?>
+	</head>
+
+	<body>
+		<div id="pagecontainer">
+			<div id="windowcontainer">
+				<div class="windowcontentcolumn0">
+					<div class="floatright">
+						<a href="#" onclick="window.close();" style="color:#000000; text-decoration:none">Close window&nbsp;<img src="images/close_icon.gif" width="8" height="8" alt="Close window" /></a>
+					</div>
+					<div class="clear"></div>
+					<img src="images/eacard.gif" alt="" />
+					<p>if (you have one of these cards (or their equivalents) you may enter your registration number here.<br /><br />
+					For 2008 this is optional, but in the future it might become a requirement for claiming your exemption from the affiliated surcharge.</p>
+				</div><br />
+			</div>
+		</div>
+	</body>
+</html>

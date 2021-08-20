@@ -1,0 +1,15 @@
+If you do not already have a version of OES for PHP installed, you should download the oes3.x.x.zip file. See the install.txt file for more information.
+If you have changed any scripts or CSS, check that these are not included in the upgrade. If they are, you will have to identify the changes that have occurred and apply them manually.
+1) Unzip the distribution file.
+2) Sign on to the admin system of your OES 3 website and tick the 'down for maintenance' checkboxes on all the sites (using the edit sites option on the admin menu).
+3) Log out of the admin system.
+4) Copy the unzipped files into the correspnding directory structure contents to your PHP server.
+5) Navigate to admin.php in your browser. This will automatically detect that an upgrade has occurred and will update the database
+		version accordingly.
+6) After the installation completes, you'll be shown a status page describing what the installation
+		routine did and allowing you to proceed to the admin login page.
+5) Sign on to the admin system and clear the 'site down for maintenance' checkbox on the site(s).
+6) If there is a new version of the Offline Admin Application, download that as well if you are using this part of the system.
+
+TinyMCE and uploading images and files for the content management system
+If you want to use the functionality within TinyMCE to upload, manage and link to files on your web server, you need to edit the CONFIG_WEBSITE_DOCUMENT_ROOT setting within the scripts/tinymce/jscripts/tiny_mce/plugins/ajaxfilemanager/inc/config.base.php file. This should be set to the value produced by running the dirname(__FILE__) PHP statement in the root web directory of your server.

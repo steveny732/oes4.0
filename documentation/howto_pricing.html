@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="../css/styles.css" rel="stylesheet" type="text/css">
+		<title>How To - Pricing</title>
+	</head>
+
+	<body style="width: 700px; margin-left: 50px;">
+		<h1>How To - Pricing</h1>
+		<h2>Overview</h2>
+		There are many different race pricing options which you can use to ensure that entracts are charged the correct amount.<br /><br />
+		This document will hopefully explain the options available and how they can be used. In most cases the pricing options were created for a specific purpose, but that doesn't mean they can't be used for different requirements.<br /><br />
+		<h2>Base Entry Fee</h2>
+		The price an entrant is charged starts with the base entry price. This is a fixed amount to which all other charges are discounts are added/subtracted.<br /><br />
+		<h2>Affiliation Fee</h2>
+		If you work with athletic organisations like the British Triathlon Association, an affiliated race is required to charge non-affiliated entrants an affiliation fee. If a non-zero fee is specified on the race, this is automatically added to the base price when an entrant doesn't specify their membership of an affiliated club – this could be because they don't specify a club at all, or they specify an unaffiliated club. For some affiliation bodies, it is possible for the club to be unaffiliated, but the person to be affiliated and the entrant can get the affiliation fee waived by specifying the club and their runner ID.<br /><br />
+		<h2>Online Fee</h2>
+		If a non-zero online fee is specified on a race, the entrant will be charged this amount – but only once. So if they enter two or more races at the same time, or they enter several entrants in one online transaction, they only pay the online fee once. You need to decide your online fees accordingly. There is usually some cost advantage to the race organiser when several entries are made in one online payment as the payment companies usually charge a fixed fee and a percentage and the fixed part becomes more insignificant the higher the transaction value.<br /><br />
+		<h2>Charity Fee (fixed)</h2>
+		If a charity fee is specified on a race, the entrant will be charged this amount and it will be added to their entry fee. Details of charitable tax concessions like Gift Aid (in the UK), can be shown on a form using the *ONGIFTAID control.<br /><br />
+		<h2>Charity Option – User Specified</h2>
+		If you prefer entrants to specify the amount they want to donate to charity (if anything), you can enable the 'Voluntary Donation' form field (database name = charval) by ticking its 'show on form' attribute in form maintenance. An entry field will then be shown on the form into which the entrant can enter the amount they're willing to donate. By default, the maximum donation is 5.00 and the minimum is 0.00 (minimum = 0.00 makes the donation optional). If you want to change the maximum or minimum, you can change these values on the form field.<br /><br />
+		<h2>Transport</h2>
+		This feature is switched on by ticking the "Transport Enabled" checkbox on a race. You're then required to enter the Transport Fee which will be charged when transport is selected on the form. You may also need to set the 'show on form' attributes for the relevant form fields.<br /><br />
+		The main difference with this charge is that you can to tick whether the charge is required and if and only if you tick that you require the charge, you get a radio button to specify options (by default where you require transport from).<br /><br />
+		Although this is called "transport" there's nothing to stop you using this for other charges.<br /><br />
+		<h2>Chip Rental</h2>
+		This feature can be switched on by entering an amount in the "Chip Rental Fee".<br /><br />
+		The main difference with this charge is that it is automatically charged unless the entrant ticks that they will be using their own chip and also specifies their chip number.<br /><br />
+		As with the online fee, entrants will only be charged a chip rental fee once if they enter multiple races.<br /><br />
+		Although this is called "Chip Rental" there's nothing to stop you using this for other charges.<br /><br />
+		<h2>Multi-race Discounting</h2>
+		For race series it is possible to specify a discount which is applied when a certain number of races in the series are entered in one transaction.<br /><br />
+		The discount and the number of races to which the discount applies can be specified on the series.<br /><br />
+		<h2>Admin Discounting</h2>
+		In addition to the multi-race discount, it is possible to specify on the admin entry form an arbitrary discount to apply to an entry (the discount can be negative – which will be processed as an additional charge). This has no effect on what the entrant is actually charged as entries made through the admin system do not go through payment processing, but this can be useful for reconciliation purposes.<br /><br />
+		<h2>Coupons</h2>
+		You can set up coupons which can be used to apply discounts or additional fees (by specifying a negative discount). The entrant has to enter a code which has to match a coupon code set up on the race (using the option 'coupons' beside the race in race maintenance. Alternatively, you can specify the coupon entry as a radio button and set codes up in the values field of the form field. This enables you to apply fixed discounts/charges based on a selection made by the entrant.
+		<h2>Variable Pricing</h2>
+		It is possible to set up varying base entry fees and online fees by date for each race – so for example you can have an increasing fee as the race date approaches. Choose the 'race prices' option alongside the race in race maintenance to set this up.<br /><br />
+		<h2>Sales Items (new in version 3.10.0)</h2>
+		It is now possible to specify any number of chargeable options for each race. These can be single charges – you tick a box and you get charged a fixed amount (you might want to enter an optional part of the race) – or quantity-based – you tick a box and enter a quantity and you get charged x times the chargeable amount (e.g. you might want 3 pasta party tickets).<br /><br />
+		You can set up the sales items using the new 'edit sales items' option on the admin menu. Once you've created your sales items, you can enable them on any races by clicking on 'sales items' beside any race.<br /><br />
+		You may also need to set the 'show on form' attributes for the relevant form fields to complete the configuration.<br /><br />
+		If you select the same sales option on more than one race and the entrant choses to enter both races, the sales item is available for selection on the entry form for all races (this contrasts with other options like option 1 & 2 which can only be specified for all entered races).<br /><br />
+	</body>
+</html>

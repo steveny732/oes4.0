@@ -1,0 +1,7 @@
+1) Allow free-of-charge entries to go through without payment.
+
+2) Allow one-time coupons.
+
+3) Get the waiting list working.
+
+4) Get series numbering working when entries made individually.

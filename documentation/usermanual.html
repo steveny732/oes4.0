@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>openEntrySystem 3.0 User Manual</title>
+		<link href="../css/styles.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body style="width: 700px; margin-left: 50px;">
+
+		<h1>Table of Contents</h1>
+		
+		<a href="#installing">Installing openEntrySystem 3.0</a><br /><br />
+		<a href="#using">Using the Online openEntrySystem 3.0</a><br /><br />
+		&nbsp;&nbsp;<a href="#overview">Overview and Key Features</a><br /><br />
+		&nbsp;&nbsp;<a href="#entrysystem">Entry System</a><br /><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href="#public">Public Functions</a><br /><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#racestatus">Race Statuses</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#publicenter">Enter Online</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#poep">Public Online Entry Procedure</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#publictransfer">Transfer/Change Entry</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tcp">Public Transfer/Change Procedure</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#publicregister">Register on Waiting List</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rowlp">Public Register on Waiting List Procedure</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#publicoffer">Offer My Entry</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#otwlp">Public Offer to Waiting List Procedure</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#publicwl">Current Waiting List</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#publicdownload">Download Entry Form</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#publicel">Current Entry List</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#publicfb">Give Us Your Feedback</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#publicsfb">Show Race Feedback</a><br /><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href="#admin">Administration Functions</a><br /><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminentry">Administration Entry</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminlangs">Edit Languages</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#admincurrs">Edit Currencies</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminsites">Edit Sites</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminsitepayments">Edit Site Payment Methods</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminlevels">Edit Levels (security)</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminusers">Edit Users</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#admincontacts">Edit Contacts</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminpages">Edit Pages</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#admincontent">Edit Page Content</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminnews">Edit News</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminfeedback">Edit Feedback</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminseries">Edit Series</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminacts">Edit Age Category Types</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminagecats">Edit Age Categories</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminraces">Edit Races</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminpreallocs">Edit Race Number Preallocations</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminclubtypes">Edit Club Types</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminclubs">Edit Clubs</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#admindbgroups">Edit Database Groups</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#admindbcolumns">Edit Database Columns</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminforms">Edit Forms</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminformfields">Edit Form Layout</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminentries">View/Update Entries/Unpaid List/Waiting List</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#admincto">View/Update Changes/Transfers/Offers</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminwlm">Waiting List Matching</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#admindownload">Download to Excel</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminuploadnochex">Upload Nochex CSV</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminuploadnochex">Upload Paypal CSV</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminreconciliation">Reconciliation Summary</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminuploadresults">Upload Results</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#adminlogout">Log Out</a><br /><br />
+		&nbsp;&nbsp;<a href="#technical">General Technical Information</a><br /><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href="#technicalemail">Email Templates</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href="#technicalpet" id="technicalpet">Public Entry Form</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href="#technicalaet" id="technicalaet">Administration Entry Form</a><br /><br />
+
+		<a name="installing" id="installing"><h1>Installing openEntrySystem 3.0</h1></a>
+		<ul>
+			<li>Unzip the distribution file.</li>
+			<li>FTP or copy the directory structure contents to your PHP server. After doing this, ensure that the 'includes/dbconfig.php' file has permissions that allow the installation routine to write to it.</li>
+			<li>Navigate to admin.php in your browser. This will automatically detect that installation is required and will prompt for installation parameters. The installation routine that runs depends on whether the OES database already exists and, if it does, whether it is empty, contains a migrated copy of the Access database from the ASP version of OES (see upgrade.txt) or whether it is an up-to-date version of the database (copied from another PHP server for example).</li>
+			<li>After the installation completes, you'll either be shown a status page describing what the installation routine did and allowing you to proceed to the admin login page, or you'll be taken directly to the admin login page.</li>
+			<li>Login with username: <strong>admin</strong> and password: <strong>password</strong>.</li>
+			<li>The administration menu is shown. You will need to work through the items from top to bottom as outlined in the administration section.</li>
+			<li>After you're happy with the installation, you can remove databaseinstall.php and you can set the permissions of 'includes/dbconfig.php' so that it is no longer writable.</li>
+		</ul>
+
+		<a name="using" id="using"><h1>Using the Online openEntrySystem 3.0</h1></a>
+
+		<a name="overview" id="overview"><h2>Overview and Key Features</h2></a>
+		The openEntrySystem is a combination of a website based on an online suite of scripts which allow the recording and administration of race entries from the entry form through to payment with additional, optional, transfer and waiting list functionality and an offine administration application for general pre-race and race day administration tasks.<br /><br />
+		The website is divided between a public area and a secure administration area. The public area is designed for ease of use. All name and address entries are automatically capitalized and validation is carried out to an unobtrusive level (i.e. the system doesn't require all fields to be completed). The administration area provides facilities for manual registration of entries, list administration, online payment reconciliation and download and upload.<br /><br />
+		Email confirmations are used to provide instant feedback to entrants. Email confirmation is also used to validate transfer, change and offer requests (see the transfer, change and offer sections below).<br /><br />
+		Entrants also can see their entry on the race entry list immediately after payment is confirmed.<br /><br />
+
+		<a name="entrysystem" id="entrysystem"><h2>Entry System</h2></a>
+		<strong>IMPORTANT</strong> All the options accessible through the buttons shown on the home page are opened in a new window with the browser address bar and navigation buttons supressed. This is deliberate as it helps reduce the likelihood of incomplete, duplicate or erroneous entry registration and payment processing by use of the browser back-button.<br /><br />
+
+		<a name="public" id="public"><h3>Public Functions</h3></a>
+		By default, the main entry point for the openEntrySystem is the race list which usually appears on the home page. This shows a list of future races with their current entry status and a number of buttons which link to the other available public functions allowed for the race. What actually appears on the home page is configurable through the content management system. Furthermore, it is possible to configure multiple sites all with their own, different, home page, menu structure and races.<br /><br />
+		<a name="racestatus" id="racestatus">The following race statuses are possible:-</a><br />
+		<ul>
+			<li>Entries open {date}</li>
+			This status shows when an <em>Online Entries Open</em> date is set up on the <a href="#adminrace">race</a> and it is in the future. The date shown will be formatted according to the browser locale or the manually selected locale (if configured).<br /><br />
+			<li>Entries are now closed</li>
+			This status shows when an <em>Online Entries Close</em> date is set up on the <a href="#adminrace">race</a> and it has passed. The date shown will be formatted according to the browser locale or the manually selected locale (if configured).<br /><br />
+			<li>{places} places left</li>
+			This status shows when the <a href="#adminrace">race</a> is set to <em>Allocate Numbers</em> and there are places still available. The system determines whether places are available by counting the generated race numbers which aren't allocated to entries.<br /><br />
+			<li>Places still available.</li>
+			This status shows when the <a href="#adminrace">race</a> is set to not <em>Allocate Numbers</em>. No checks are made against the <em>Entry Limit</em>.<br /><br />
+			<li>Sorry, the race is now full.</li>
+			This status shows when the <a href="#adminrace">race</a> is set to <em>Allocate Numbers</em> and there are no more places available. The system determines whether places are available by subtracting the number of entries on the system plus the number of unused pre-allocations from the race limit.
+		</ul>
+		The buttons which display for each race are determined by the status of the races. A complete list of the buttons follows:-<br />
+		<ul>
+			<a name="publicenter" id="publicenter"><li>Enter Online</li></a>
+			This button shows if the race is currently open for online entries (the <em>Online Entries Open</em> date must be in the past, the <em>Online Entries Close</em> date must be in the future and places must still be available). Clicking this button takes you to the start of the <a href="#poep">public online entry procedure</a>.<br /><br />
+			<a name="publictransfer" id="publictransfer"><li>Transfer/Change Entry</li></a>
+			This button shows if the race has <em>Transfers Enabled</em> and transfers are still open. Clicking this button takes you to the start of the <a href="#tcp">transfer/change procedure</a>.<br /><br />
+			<a name="publicregister" id="publicregister"><li>Register on Waiting List</li></a>
+			This button shows if the race is full and has <em>Waiting List</em> and <em>Waiting List Additions</em> enabled. Clicking this button takes you to the start of the register on <a href="#rowlp">waiting list procedure</a>.<br /><br />
+			<a name="publicoffer" id="publicoffer"><li>Offer My Entry</li></a>
+			This button shows if the race is full and has <em>Waiting List</em> and <em>Waiting List Offers Open</em> enabled. Clicking this button takes you to the start of the <a href="#otwlp">offer to waiting list procedure</a>.<br /><br />
+			<a name="publicwl" id="publicwl"><li>Current Waiting List</li></a>
+			This button shows if the race has <em>Waiting List Enabled</em>. Clicking this button takes you to the <a href="#waitinglist">waiting list page</a>.
+			<a name="publicdownload" id="publicdownload"><li>Download Entry Form</li></a>
+			This button shows if the race has places available and the <em>Entry Form URL</em> set up on the <a href="#adminrace">race</a> is not set to <strong>*NONE</strong>. Clicking this button takes you to the URL specified in the <em>Entry Form URL</em> field.<br /><br />
+			<a name="publicel" id="publicel"><li>Current Entry List</li></a>
+			This button shows if the race is open for entries. Clicking this button takes you to the <a href="#entrylist">entry list page</a>.
+			<a name="publicfb" id="publicfb"><li>Give Us Your Feedback</li></a>
+			This button shows if the <em>Feedback Open</em> flag is set on the race. Clicking this button takes you to the <a href="#feedbackform">feedback entry form</a>.
+			<a name="publicsfb" id="publicsfb"><li>Show Race Feedback</li></a>
+			This button shows if the <em>Feedback Open</em> flag is set on the race. Clicking this button takes you to the <a href="#showfeedback">race feedback list</a>.
+		</ul>
+
+		<a name="poep" id="poep"><h4>Public Online Entry Procedure</h4></a>
+		The public online entry procedure consists of 3 steps:-
+		<ol>
+			<li>Agree to Terms & Conditions</li>
+			There is no real functionality on this page - it just won't let the entrant proceed until they've ticked the box to accept the terms and conditions.<br /><br />
+			<li>Enter Details</li>
+				The pre-configured public online entry form delivered with the system consists of 5 sections:-
+				<ol>
+					<li>Select Race(s)</li>
+					Here the entrant selects the race(s) they wish to enter. They can select as many of the races as they wish. As they select races with different options, settings and charges, sections 2, 3, 4 and 5 are updated accordingly.<br /><br />
+					<li>Your Details</li>
+					The name, address, telephone, gender, date of birth and email addresses are always shown. The name and address fields are automatically capitalized before being written to the database. The Postcode and email address fields are special cases, Postcode being always converted to uppercase and email address being always converted to lowercase.<br /><br />
+					At the very least, entries must be made in the first name and surname, first line of the address, postcode, gender, date of birth and email address fields. As well as being a valid date, the date of birth must comply with the <em>Minimum Age</em> setting on all selected races. A simple validation is carried out on the entered email addresses to ensure they agree with each other and are, superficially, formatted like email addresses.<br /><br />
+					<li>Race Options</li>
+					The details (if any) which appear in this section are determined by settings on the chosen race(s).<br /><br />
+					Options include t-shirt size (if any selected race has <em>T-Shirts Enabled</em>) and <em>Option 1</em> and <em>Option 2</em> tickboxes (see <a href="#adminrace">race configuration</a> for more details on these options).<br /><br />
+					<li>Team/Affiliated Club</li>
+					The content of this section depends on the <em>Clubs Enabled</em> and <em>Teams Enabled</em> settings on the <a href="#adminrace">race(s)</a> selected in section 1 of the form. If at least one of the selected races has the <em>Teams Enabled</em> setting, the Team Name shows. If at least one of the selected races has the <em>Clubs Enabled</em> setting, the Affiliation details show.<br /><br />
+					The Team Name field is a free-format field. It will automatically be capitalized in the same way as outlined in the Your Details section above.<br /><br />
+					The Affiliation details contains a tickbox which allows the entrant to select whether they are an affiliated entrant or not. When ticked, the Club entry field shows. Keying letters into this field automatically shows all the club names which begin with the letters. The club list can be maintained through the <a href="#clubadmin">club maintenance</a> option of the administration system. Clicking on the relevant club selects it and closes down the club selection box. The Registration No. field now shows which allows the entrant to (optionally at the moment) enter their UK Athletics Race Licence Number.<br /><br /> 
+					<li>Payment Due</li>
+					This section shows the charges included in the entry and the total amount due for the races selected in section 1. Most charges are per race, but the online and chip rental fees are only charged once. For full details of the charges and how they are applied, see the <a href="#adminrace">race maintenance</a> topic in the administration section.
+				</ol>
+			<li>Payment</li>
+			At this point the details entered so far have been saved, but no race numbers have been allocated and the entrant is not considered to be entered into the races they have selected. Race numbers are only allocated once the payment process has been completed.<br /><br />
+			On this page, the entrant has the option to add further entrants or to complete the payment process. If they click the 'Add another entry' button they will be returned to a blank entry form and will follow the same entry procedure from step 2 above. When they return to the payment page, the payment due will reflect all the entrants added so far. In theory there is no limit to the number of entrants that can be processed in one payment.<br /><br />
+			The payment options allowed are configured from the <a href="#sitepayadmin">site payments maintenance</a> option of the administration system. If the entrant clicks one of the the 'Make payment' buttons, they will normally be taken to the appropriate online payment system which is not documented here. If the site is one of the payment test modes, the online payment steps may be skipped or simulated. See the <a href="#onlinepaymentadmin">online payment section</a> later in this document.<br /><br />
+			After successful payment, an email is sent to the given email address(es) showing most of the details registered for the entrant to check and their allocated race number(s) and a payment confirmation page appears. Entrants can then either view the current entry lists, close the window or register their details (see the <a href="#userreg">user registration section</a> later in this document.
+		</ol>
+
+		<a name="tcp" id="tcp"><h4>Transfer/Change Procedure</h4></a>
+		The transfer/change procedure has 5 steps. Steps 4 and 5 are purely security measures to prevent entries being changed or transferred by someone other than the original entrant.
+		<ol>
+			<li>Transfer/Change Details</li>
+			To identify the entry to transfer or change, the system requires the original entrant to enter their surname, postcode and date of birth (optionally, to cope with two people with the same surname and date of birth living at the same address, it is possible to also enter the original entrant's first name). These details will, hopefully, only be known by the original entrant, but there are further checks in place to prevent unauthorized transfers and changes occurring. The radio buttons at the bottom of the page are used to indicate whether a transfer to a completely new entrant is required or whether this is just a change/correction of the original entry.<br /><br />
+			<li>Confirm Details</li>
+			This page shows the details of the original entrant and asks for verification that this is the correct entry for transfer/change.<br /><br />
+			<li>New Entry Details/Change Entry Details</li>
+			If the transfer option was selected in step 1, a blank entry form will now show for details of the new entrant to be registered. The entry form is identical to the public entry form described in the <a href="#poep">public online entry procedure</a> except that the Payment Due section doesn't show and some additional text might be displayed where certain information cannot be changed (for example if the original entrant was affiliated, the new entrant must be affiliated as well to prevent an extra charge being required).<br /><br />
+			If the change option was selected in step 1, the original entrant's details are shown and can be changed.<br /><br />
+			<li>Transfer/Change Details Email</li>
+			Once the new/changed entry form details have been keyed, an email is sent to the email address of the original entrant. If the entrant no longer has access to the email address they originally registered, they must contact the race administrator to carry out the next step. If the original entrant did not give an email address, a message is appended to the top of the email which is bcc'd to the race organiser indicating that they must contact the original entrant.<br /><br />
+			At this point, no changes have been made to the race entry.<br /><br />
+			The email will contain a link and a reference number which must be used to confirm the transfer/change. If links are disabled in the entrant's email client, they can copy the URL and reference number to their browser manually.<br /><br /> 
+			<li>Confirm Transfer/Change Details</li>
+			This is the final step which confirms that the transfer/change should be made. As soon as the Confirm Transfer/Change button is clicked, the race entry is transferred/changed. An email is sent to the new entrant (or original entrant in the case of a change) confirming details of the transfer/change.
+		</ol>
+
+		<a name="rowlp" id="rowlp"><h4>Register on Waiting List Procedure</h4></a>
+		The register on waiting list procedure is very similar to the public online entry procedure and consists of two steps.
+		<ol>
+			<li>Agree to Terms & Conditions</li>
+			This page varies slightly from the terms and conditions page of the public online entry procedure in that you can only register on the waiting list of one race at a time. The selection of which race you are registering for is made here.<br /><br />
+			There is no real additional functionality on this page - it just won't let the entrant proceed until they've ticked the box to accept the terms and conditions.<br /><br />
+			<li>Enter Details</li>
+			The register on waiting list entry form is almost exactly the same as the public online entry form, the only difference being that the race you are registering for is pre-selected (having been selected on the previous page). The full details of this form are documented in the <a href="#poep">public online entry procedure</a>.<br /><br />
+			As soon as the Register button is clicked, any unmatched offers are checked and, if an unmatched offer is found, the place will be immediately allocated to the first entry on the waiting list and the <a href="#oap">offer acceptance procedure</a> will be invoked. After registering, an email is sent to the given email address outlining some of the terms and conditions of the waiting list system. The email also contains a link and a reference number which can be used to remove the entry from the waiting list should the potential entrant change their mind. A confirmation page is shown which lets the user know their position in the waiting list.
+		</ol>
+
+		<a name="otwlp" id="otwlp"><h4>Offer to Waiting List Procedure</h4></a>
+		The offer to waiting list procedure is very similar to the transfer change procedure in that the final two steps are purely security measures to prevent entries being offered by someone other than the original entrant.
+		<ol>
+			<li>Offer Entry to Wait List</li>
+			To identify the entry to offer, the system requires the original entrant to enter their surname, postcode and date of birth (optionally, to cope with two people with the same surname and date of birth living at the same address, it is possible to also enter the original entrant's firstname). These details will, hopefully, only be known by the original entrant, but there are further checks in place to prevent unauthorized transfers and changes occurring.<br /><br />
+			<li>Confirm Details</li>
+			This page shows the full details of the original entrant and asks for verification that this is the correct entry for offer.<br /><br />
+			<li>Offer Email</li>
+			Once the original details have been confirmed, an email is sent to the email address of the original entrant. If the entrant no longer has access to the email address they originally registered, they must contact the race administrator to carry out the next step.<br /><br />
+			The email will contain a link and a reference number which must be used to confirm the offer. If links are disabled in the entrant's email client, they can copy the URL and reference number to their browser manually.<br /><br />
+			<li>Confirm Offer</li>
+			This is the final step which confirms that the offer should be made. As soon as the Confirm Offer button is clicked, the existing waiting list is checked and, if a waiting entry is found, the offered place will be immediately allocated to it and the <a href="#oap">offer acceptance procedure</a> will be invoked. Either way, a confirmation email is sent to indicate the the place has been offered. This email contains a link to revoke the offer should the entrant decide they no longer want to offer their place.
+		</ol>
+
+		<a name="entrylist" id="entrylist"><h4>Entry List</h4></a>
+		The public entry list page allows details of entrants to be shown in a reasonable flexible way but with limitations on the amount of information shown and its sequence (to restrict its usefulness to spammers etc).<br /><br />
+		Entries are shown 100 per page and can be sequenced by surname or club. Unattached entrants have a club name of 'Unattached' and when the entries are sorted by club, they appear at the end of the list. It is further possible to restrict the entries displayed to an individual club and/or a full or partial surname.<br /><br />
+		To activate new search or sort fields, the Search button needs to be clicked to refresh the data.<br /><br />
+		
+		<a name="waitinglist" id="waitinglist"><h4>Waiting List</h4></a>
+		The waiting list page shows details of all those currently registered on the waiting list in the waiting list sequence. If there are any unmatched offers, a count of these is shown.<br /><br />
+		
+		<a name="feedbackform" id="feedbackform"><h4>Race Feedback Form</h4></a>
+		If required, you can open up a forum for receiving race feedback. The user can enter free-form text which will not display on the feedback list until it has been moderated.<br /><br />
+		
+		<a name="showfeedback" id="showfeedback"><h4>Show Race Feedback</h4></a>
+		Race feedback is listed here in reverse date sequence (i.e. most recent first), once it has been marked as moderated within the administration system (see <a href="#adminfeedback">Feedback Maintenance</a>).<br /><br />
+		
+		<a name="oap" id="oap"><h4>Offer Acceptance Procedure</h4></a>
+		When a waiting list entry is matched against an offer, an email is sent to the person on the waiting list with links to either accept or reject the offer. The waiting list entry is temporarily removed from the waiting list while the rest of the procedure takes place. If the potential entrant follows the 'accept offer' link or manually enters the URL and reference number and confirms acceptance of the place, they are taken through the online payment process. When the payment process is completed, the race place is transferred to them. The refund to the original entrant is a manual step (as there is no automatic refund facility in the online payment systems).<br /><br />
+		If the potential entrant follows the 'reject offer' link or manually enters the URL and reference number, their waiting list entry is removed from the system and the offer is made available for further offers.<br /><br />
+		Normally, if the potential entrant doesn't respond to the offer within a certain number of days, the offer to them is revoked and they are placed at the bottom of the waiting list. The monitoring of offers and offer revocation is also a manual process. See the administration section later in this document.<br /><br />
+
+		<a name="admin" id="admin"><h3>Administration Functions</h3></a>
+
+		<a name="adminentry" id="adminentry"><h4>Administration Entry</h4></a>
+		Race entries can be made through the administration system (e.g. for postal entries). These entries bypass the online payment process and race number pre-allocation can be utilised if necessary.<br /><br />
+		The administration entry process is started by keying in the entrant's surname in the <em>New entry: Surname:</em> box at the top of the administration menu. As each letter is keyed, the existing race details and any race history details are searched and matches are displayed. At any point, matching entrant details can be clicked or the <em>New Entry</em> button can be clicked. If a matching entrant detail was clicked, all information relating to that entrant is automatically filled in on the displayed entry form (the only exception to this is the tax-payer tick box relating to Gift Aid, which must be ticked for each entry for legal reasons).<br /><br />
+		The administration entry form is identical to the public entry form with the following exceptions:-
+		<ul>
+			<li>each race shown at the top of the screen has a <em>Race number</em> pull-down menu associated with it (unless the race is set to not allocate race numbers).</li>
+			Any available race number pre-allocations are shown (pre-fixed by a 'P') in the pull-down list so pre-allocated race numbers can be allocated to an entry. The administration entry form is also used when amending entries from the <a href="#adminentries">entry list</a>. When amending an entry, any race number already allocated will be pre-selected in each pull-down list. You can change the allocated race number by selecting a new one off the list (the previously allocated number is released to the pool of available race numbers). By selecting a blank or zero number from the list you can get the system to automatically allocate a new race number from the available race number pool). <strong>Note:</strong> race numbers will only be allocated if the 'Payment received' checkbox is ticked.<br /><br />
+			<li>Payment Received</li>
+			The 'Payment received' checkbox allows the administrator full control over whether an entry is placed on the unpaid list or is shown on the entry list. If the 'Payment received' checkbox is unticked, the entry will be moved to the unpaid list (if a race number was previously allocated to the entry, it will be released to the pool of available race numbers). If the 'Payment received' checkbox is ticked the entry will be placed on the entry list and, if necessary, a race number will be allocated.<br /><br />
+			<li>Online Fee Paid</li>
+			In order to fully reconcile online payments against entries, it is necessary to have control over whether the online entry fee is paid for a particular entry. An example would be where an online entry was processed successfully by Nochex but a payment confirmation wasn't received by the openEntrySystem. Under these circumstances, the entry would be placed on the unpaid entries list and the race administrator would have to manually mark the entry as paid as per a postal entry made through the administration system, but it would also be necessary to mark the online fee as paid. The primary use of this field is to ensure that the <a href="#adminreconcilation">Reconcilation</a> process can be controlled.<br /><br />
+			<li>Discount</li>
+			This field will be automatically populated with any multi-race series discount (on the last race processed), but it can also be used to indicate under or overpayments on postal entries (overpayments can by entered as negative discounts). Once again, the primary use of this field is to enabled from control of the <a href="#adminreconcilation">Reconciliation</a> process.<br /><br />
+			<li>Waiting?</li>
+			This checkbox is ticked when the entry being shown is on the waiting list. This is normally controlled by the system and it should not be necessary to manually change it.<br /><br />
+			<li>Offer Count?</li>
+			This field contains a count of the number of times an entry on the waiting list has been offered a place. Normally, if someone is offered a place and they don't respond within a reasonable time, the offer is revoked and they are placed at the bottom of the waiting list.<br /><br />
+			<li>Waiting Since</li>
+			This field is used to control the order in which waiting list entries are offered places.<br /><br />
+			<li>Override Category</li>
+			This field can be used to override the system-allocated age category. One possible use for this is when the race organisers provide pacers. These pacers are not usually eligible for prizes so they can be 'removed' from the normal prize allocation calculation by giving them an override category of 'PACER'.<br /><br />
+			<li>Send Email</li>
+			If this checkbox is ticked and the 'Payment received' checkbox is also ticked, an entry confirmation email is sent when the entry is accepted. This is useful for re-sending confirmation emails that didn't arrive.<br /><br />
+			<li>Email Address</li>
+			As the administration entry process can be used to process postal entries from entrants without an email address, a special <em>none</em> link appears to the right of the email address which, if clicked, fills in the special value <strong>*NONE</strong> in the email field. When the email field is set to <strong>*NONE</strong>, no confirmation emails are sent and subsequent transfer/change and offer to waiting list functions become semi-manual, requiring the race administrator to contact the entrant via another means.<br /><br />
+			The email confirmation field is not shown on the administration form.<br /><br />
+		</ul>
+
+		<a name="adminlangs" id="adminlangs"><h4>Languages</h4></a>
+		This option allows you to add and update language codes which control the operation of multi-language mode and how text is displayed in the public sections of OES. For more information, see the howto_locales_and_languages.html document.<br /><br />
+		<a name="admincurrs" id="admincurrs"><h4>Currencies</h4></a>
+		This option allows you to add and update currency codes. OES is not yet a truely multi-currency system, but it is possible to price races within a particular site in different currencies (i.e. one currency per site).<br /><br />
+		<a name="adminsites" id="adminsites"><h4>Sites</h4></a>
+		This option allows you to configure some settings which will control the whole system.<br /><br />
+		The openEntrySystem is delivered with one site is already set up.<br /><br />
+		Click on the openentrysystem.org site.<br /><br />
+		The <em>Site URL</em> is used to pass callback information to the online payment systems. It is also used to default website links in emails. This field is mandatory and should contain the full URL to your domain including http:// but excluding any page information (e.g. http://www.yoursite.com not http://www.yoursite.com/index.php.<br /><br />
+		<em>Site Banner Image</em>, <em>Club Image</em> and <em>News Image</em> allow you to control the images which show on the index.php page.<br /><br />
+		<em>Menu</em> and <em>Heading Colours</em> can be defined within the site maintenance. In this way it is possible to configure colours without it being necessary to update the CSS. If left blank, the CSS settings are used. Click the 'choose colour' links to open a colour-picker, or simply key in an RGB hex colour code preceeded by a '#' character. Examples of the chosen colours are shown on the right of the entry fields.<br /><br />
+		The <em>SMTP fields</em> are used to send out email confirmations of entries, transfers, waiting list requests, offers etc. There is a further setting at race level to define the email address used as the email 'sender'.<br /><br />
+		<em>Entry Form URL</em> is the url that can be used to download an entry form. If set to <strong>*NONE</strong>, the button does not appear on the home page.<br /><br />
+		<em>Cheque Payee</em> appears on various pages which show when a Nochex payment has failed. The pages offer the option of paying by cheque and show this payee name.<br /><br />
+		<em>Copyright</em> is the piece of text which appears to the left of the Copyright 2006 – 2008 message on every page.<br /><br />
+		The <em>Feedback Open</em> flag, when ticked, adds two new options to the home page for posting and viewing comments from the public about races.<br /><br />
+		The <em>Down for Maintenance</em> flag, when ticked, prevents any member of the public from using the site. To enabled testing, if you’ve signed-on through admin.php, this setting is ignored for your session only and you will be able to use the full system.<br /><br />
+
+		<a name="adminsitepayments" id="adminsitepayments"><h4>Site Payment Methods</h4></a>
+		This option allows you to configure your online payment methods. Currently only Nochex and Paypal are supported.<br /><br />
+		The <em>Type</em> menubox is used to select whether the payment method is Nocheck or Paypal.<br /><br />
+		The <em>Merchant ID</em> is self-explanatory, but a special setting of <strong>*NONE</strong> can be used in the test phase to completely exclude calls to the online payment system (successful payments will be simulated instead). There is another setting at race-level for configuring online payment testing – the special option here is for when you don't have a merchant ID yet or you are working on a web server behind a firewall which prevents the online paymeny system callbacks.<br /><br />
+		The setting of the <em>Enabled</em> checkbox determines whether this payment method appears as a payment option in the checkout section of the entry process.<br /><br />
+
+		<a name="adminlevels" id="adminlevels"><h4>Levels</h4></a>
+		You can define security levels to all the admin pages to restrict options to individuals or groups of users.<br /><br />
+		The <em>Level</em> field can be used to construct a hierarchy of security. By default a level has access to all the levels above it (this can be overridden at the user level).<br /><br />
+
+		<a name="adminusers" id="adminusers"><h4>Users</h4></a>
+		You can set up as many users as you wish and using the security levels and page security you can restrict their access.<br /><br />
+
+		<a name="admincontacts" id="admincontacts"><h4>Contacts</h4></a>
+		If you use the <strong>Contact Us</strong> page (see the content management section), you can set up some email contacts here.<br /><br />
+		<em>Race</em> is the race for which the contact is responsible. The race date and race name appear along with the role in the public part of the website, but no email addresses are revealed.<br /><br />
+		<em>Role</em> is the piece of text that identifies the area of responsibility of the contact. Typical roles would be Entries, Course, Marshals, PR etc.<br /><br />
+		<em>Email Address</em> is the email address that the contacts form will send to. The email address is not revealed on the public part of the website to prevent spam.<br /><br />
+
+		<a name="adminpages" id="adminpages"><h4>Pages</h4></a>
+		Through the pages option you can set up new public pages (like race instuctions etc.). You can also change the security levels of the admin pages here as well. You can configure whether the public pages are accessible through the menu system and whether textual links also appear on the page footer.<br /><br />
+		The <em>Page Sequence</em> can be used to configure the order in which links appear in the menu system and footer menus. If it is not necessary to include a particular page in the menu system or footer menus, then the entry in this field is ignored (although the maintenance list shows the options sorted by this sequence number). By convention, all admin pages have sequence number 9999.
+		By using a <em>Page URL</em> of <strong>index.php</strong>, it is not actually necessary to create new php scripts for each page. You can use the page content system (see the content management section) to lay out pages as you require.<br />
+		When adding a new page, if you leave the <em>Page URL</em> blank, it will be automatically filled-in with the url of the content management page (which is 'index.php?id=nnn', where nnn is the page number).<br /><br />
+		The <em>Alt Text</em> is used to further explain the menu links and is of particular use for those with sight disabilities.<br /><br />
+		The <em>Show on Menu</em> option is used to indicate whether a link to the page should show in the menu system.<br /><br />
+		The <em>Show on Footer</em> option is used to indicate whether a textual link to the page should show on the footer menu.<br /><br />
+		The <em>Sub Page of</em> option can be used to define sub-menus within the menu system.<br /><br />
+		The <em>Security Level</em> must be used to set the user's access rights.<br /><br />
+		The <em>This Level Only</em> option can be used to override the default hierarchical nature of the security levels. If this is set, the user will only have access to pages set to the same security level. The user will not have access to higher levels as well.<br /><br />
+
+		<a name="admincontent" id="admincontent"><h4>Page Content</h4></a>
+		The openEntrySystem has a simple content management system.<br /><br />
+		Complex page structures can be set up with different blocks of content for each page defined with a page url of <strong>default.php</strong> or <strong>index.php</strong> (although only one block is generally necessary).<br /><br />
+		The <em>Content Type</em> defines which sort of content block is displayed. Beyond the basic <strong>text</strong> content type (which shows anything layed-out in the <em>Content Text</em> box, several special content types exist:-<br /><br />
+		<strong>raceentry</strong>: shows the current race list and the race status, followed by buttons for accessing the entry system.<br />
+		<a name="newscontent" id="newscontent"><strong>News</strong></a>: shows the latest news item with a link to the main news page.<br />
+		<strong>contact</strong>: shows the email contact form.<br />
+		<strong>contactemail</strong>: contains the processing required to send the emails from the contact form and must be present as the first item on the page that shows the confirmation that an email has been sent.<br /><br />
+
+		<a name="adminnews" id="adminnews"><h4>News</h4></a>
+		If the <a href="#newscontent">news content type</a> is used on any page, the news items which show can be set up. News items are shown in reverse-date order (i.e. most recent first), and by default only one news item shows on the page (links are provided to see all historical news items).<br /><br />
+		As well as a <em>News Headline</em>, which optionally provides a short title to each news item, you can enter <em>News Summary</em> text (which is what shows in the news content block) and <em>News Text</em> (which is the text that shows on the news detail page when the <em>Read the full story here</em> link is followed).<br /><br />
+		Full help on the formatting options available for the <em>News Summary</em> and <em>News Text</em> can be found by clicking the question-mark button in the toolbar and following the links to the tinyMCE website.<br /><br />
+
+		<a name="adminfeedback" id="adminfeedback"><h4>Feedback</h4></a>
+		Any race feedback entered through the public entry form can be maintained here. Additionally, new feedback entries can be created, with full control over the date/time and moderation status (the public can't control the date/time and the moderation status of their entries). Feedback items are shown in reverse-date order (i.e. most recent first).<br /><br />
+		Public entries can be flagged as moderated by clicking on the date/time and ticking the <em>Moderated</em> flag.<br /><br />
+
+		<a name="adminseries" id="adminseries"><h4>Race Series</h4></a>
+		Here you can set up the details of any race series. You can define a <em>Series Name</em> (which isn’t used outside the admin system) and you can define a <em>Discount</em> amount to apply to a specified number of races entered. If you enter <em>No Races for Discount</em> = 3 and <em>Discount</em> = 2, a £2 discount will be applied if 3 or more races are entered in one transaction. Note: do not enter the £ sign in the <em>Discount</em> field.<br /><br />
+		If you don’t have any series-type races, you can leave the series table empty.<br /><br />
+
+		<a name="adminacts" id="adminacts"><h4>Age Category Types</h4></a>
+		OES can automatically allocate age categories to race entrants. Several different methods can be set up for this allocation and the codes allocated for each method are grouped by an age category type.<br  /><br />
+		To define a new age category type, you simply need to enter a description of the type and select the method that will be used to allocate the age category codes. The different methods available are:-<br /><br />
+		<strong>Age on day of race</strong>: calculates the entrant's age on race day. Each age category within the group has a range of ages and OES determines the age category code by finding the range in which the calculated age appears.<br />
+		<strong>Age at start of race year</strong>: calculates the entrant's age as at the 1st of January in the race year. Each age category within the group has a range of ages and OES determines the age category code by finding the range in which the calculated age appears.<br />
+		<strong>Year or Birth</strong>: uses the entrant's year of birth to determine in which age category range that year. Each age category within the group has a range of years and OES determines the age category code by finding the range in which the entrant's year or birth appears.<br />
+		<strong>Manual Selection</strong>: OES does not automatically allocate age categories and these must be manually entered by an administrator within the admin system.<br /><br />
+
+		<a name="adminagecats" id="adminagecats"><h4>Age Categories</h4></a>
+		The age category codes allocated to entrants can be defined here. Associated with each code are checkboxes which determine whether the codes are gender-specific (ticking the <em>male only</em> checkbox indicates that the category is only allocated to male entrants. Both <em>male only</em> and <em>female only</em> checkboxes should be ticked if the category is allocated for all entrants regardless of their gender. Also associated with each age category is a range of values which indicate how the code is allocated. The allocation method is described above in the Age Category Type section.<br  /><br />
+
+		<a name="adminraces" id="adminraces"><h4>Races</h4></a>
+		You can set up as many races as you like. These can be set up in advance of entries opening - entries are opened automatically on the date chosen (option).<br /><br />
+		The <em>Sequence</em> determines the order in which races show (although races are always sorted by date – so this only applies when you have more than one race on the same day).<br /><br />
+		If you’ve set up any race series, you can use the <em>Series</em> pull-down menu to link the race to the series.<br /><br />
+		<em>Race Name</em> is the name that will show to public. The name is automatically prefixed by the race date, so you don’t need to put the date in the name.<br /><br />
+		<em>Entry of the Race Distance (in km)</em> is a mandatory field. This may be used in the future for automatic Age Grade calculations when entering results using the Offline Administation Application.<br /><br />
+		<em>Race Date</em>, <em>Online Entries Open</em> and <em>Online Entries Close</em> dates are self-explanatory. The entry system uses these dates to control which races show on the website (only races with race dates in the future show) and controls whether entries to the race are allowed. Control of races is thereby completely automatic. If the <em>Entries Open Date</em> is left blank, race entries are considered open.<br /><br /><br /><br />
+		<em>Transfer Close Days</em> is the number of days before the race that online transfers are allowed (if transfers are allowed).<br /><br />
+		<em>Minimum Age</em> is self-explanatory. This is used to validate each runner's date of birth on the entry forms.<br /><br />
+		<em>Transfers Allowed</em>, allows you to switch on or off the transfer system functionality for a race.<br /><br />
+		<em>Waiting List Enabled</em>, allows you to switch on or off the waiting list system functionality for a race. If enabled, you can further define whether additions to the waiting list are open and/or whether offers can still be made.<br /><br />
+		<em>T-Shirts Enabled</em> allows you to select whether the t-shirt size options are shown on the entry forms.<br /><br />
+		<em>Teams Enabled</em> – If ticked, a free-format team name can be entered on entry forms. If clubs are also enabled, the team overrides the club in the results.<br /><br />
+		<em>Clubs Enabled</em> – If ticked, a menubox is shown on entry forms. Only predefined clubs can be selected. Additionally, affiliation charges are applied if no club is chosen or the chosen club is marked as unaffiliated.<br /><br />
+		<em>Feedback Open</em>, allows you to switch on or off the comments system for a race. The comments system allows the public to give fully-moderated feedback on your race.<br /><br />
+		<em>Allocate Numbers</em> – If you want the system to automatically allocate race numbers, tick this box. If you want to allocate numbers manually, leave it unchecked. Once entries have been made against a race, it is not advisable to change this entry.<br /><br />
+		<em>Start Number</em> allows you to start the generated race number range at an arbitrary point. If left blank or 0, numbers will be generated from 1.<br /><br />
+		<em>Entry Limit</em> – The system will automatically keep track of the free spaces and will automatically switch-off the entry system when the limit is reached. The system keeps a table of race numbers which you need to generate – so tick the <em>Generate</em> box and these will be generated when you add a race (the tickbox indicates that you want generation to occur now - if you subsequently maintain the race the tickbox will be unticked as it is not necessary to generate the numbers again). If you subsequently increase the entry limit, you can tick the <em>Generate</em> box again to add the additional new numbers. At present it is not possible to reduce the entry limit. If you enter an <em>Entry Limit</em> but you don't tick the <em>Generate Numbers</em> tickbox the race will appear to be full (as the system checks to see whether there are any free numbers and none will be set up).<br /><br />
+		<em>Transport Enabled</em> – If ticked, it is possible to charge a <em>Transport Fee</em> during the entry process depending on whether the entrant requires transport to the event start and/or from the event finish.<br /><br />
+		<em>Option1/2 Enabled</em> and <em>Option1/2 Caption</em> can be used to define checkboxes which will appear on the online entry forms. The caption will show to the left of the tickbox on the entry form. Example usage: County Championships.<br /><br />
+		<em>Test Mode</em> – If you tick this box, all payments to online payment systems will be flagged as test transactions.<br /><br />
+		<em>Chip Rental Fee</em> – this is used in combination with the other fee fields to calculate the amount to charge for an entry. If a value is entered here it will be added to the amount charged for an entry unless the <em>Own Chip Allowed</em> checkbox is ticked and the entrant's own chip number is entered on the entry form. See the <em>Base Entry Fee</em> field for details of how the entry fee is calculated. <strong>Do not</strong> prefix the amount with a currency sign.<br /><br />
+		<em>Base Entry Fee</em> – this is used in combination with the <em>Affiliation Fee, Online Fee, Chip Rental Fee, Transport Fee and Charity Fees</em> to calculate the amount to charge for an entry. The <em>Affiliation Fee</em> is only applied for non-affiliated entrants on affiliated races. The <em>Online Fee</em> is automatically added for all online entries, although it is only applied once per transaction, so if someone enters 3 people on 3 races, they will only be changed the online fee once. The <em>Charity Fee</em> can be used to charge an additional ring-fenced amount for donation to charity. Any of these fees can be left blank. <strong>Do not</strong> prefix the amounts with a £ sign.<br /><br />
+		The <em>Charity Name</em> is shown on the entry form in a section outlining the Gift Aid scheme. If no <em>Charity Fee</em> is entered, this section of the entry form does not display.<br /><br />
+		<em>Cheque Payee</em> is used to show the payee to which cheques must be made out when online payment fails.<br /><br />
+		<em>Postal Address</em> is used to show the address to send cheques when online payment fails.<br /><br />
+		<em>Entry Form URL</em> can be used to link to a downloadable entry form.<br /><br />
+		<em>Email BCC</em> is used to send copies of key emails to the entries coordinator (these are all the emails except the normal emailentry email (more of this later) – copies of the emailentry emails are sent to the email address specified in the <em>Entry BCC</em> field on the site).<br /><br />
+		<em>Email From</em> is the sender of all emails sent from the system. You must ensure that this is an email address that the SMTP server set up on the site accepts.<br /><br />
+		<em>Handling Fee Text</em> is not currently used.<br /><br />
+		<em>Official Time is Total of Phase Times</em> is used in the Offline Administration Application to configure the results entry system.<br /><br />
+		<em>Text for Official Time</em> shows as the column title for the official times in the Offline Administration Application and the results page of the website.<br /><br />
+		<em>No.of Phase Times</em> configures the Offline Administration Application and the results page of the website to show the required number of split/phase times.<br /><br />
+		<em>Text for Phase 1-8</em> shows as the column title for the phase times in the Offline Administration Application and the results page of the website.<br /><br />
+
+		<a name="adminpreallocs" id="adminpreallocs"><h4>Preallocations</h4></a>
+		It is possible to reserve individual or ranges of entry numbers, either for use by clubs (for example when clubs are using a race for their championships) or for use by the site administrator.<br /><br />
+		Club pre-allocations will be automatically used for entries linked to that club. Administration pre-allocations can only be allocated through the admin entry system by using a pull-down menu.<br /><br />
+		Select the race you’re creating pre-allocations for and select 'Administration' or the club you wish to use. Enter the range of numbers you want to pre-allocate. If you only want to pre-allocate one number, just enter it in the <em>From Race Number</em> field and leave the <em>To Race Number</em> field blank.<br /><br />
+
+		<a name="adminclubtypes" id="adminclubtypes"><h4>Club Types</h4></a>
+		OES allows several different club affiliations to be set up on the system. Several races can then be set up with different club affiliations (e.g. a triathlon could be affiliated to the BTA, a road running race to UKA or ARC and a rowing event to UK Rowing). The club type groups together the clubs of a particular affiliation and each race is linked to a club type.<br /><br />
+
+		<a name="adminclubs" id="adminclubs"><h4>Clubs</h4></a>
+		The openEntrySystem is pre-populated with a recent position from UK Athletics. British Rowing and British Triathlon Association clubs can be loaded using the text files in the documentation folder. To use these you'll need access to an SQL application like PHPMyAdmin. Contact us if you don't have this sort of access to your system and we'll provide some scripts to import these clubs.<br /><br />
+		The <em>League Club</em> field can be used to mark a group of clubs for special competitions. Although it has no functionality in the system, it can be used in the Offline Administration Application to allocate special prizes for that particular group of clubs.<br /><br />
+		The <em>Affiliated</em> field can be used to indicate clubs which haven’t affiliated to UK athletics. Some clubs have affiliated as a club but they haven’t affiliated their members. When this is the case the club should be marked as unaffiliated. The entry system will then apply the non-affiliation fee unless a race licence number is entered.<br /><br />
+
+		<a name="admindbgroups" id="admindbgroups"><h4>Database Groups</h4></a>
+		Full information about database groups can be found in the howto_user-defined_forms.html document.<br /><br />
+
+		<a name="admindbcolumns" id="admindbcolumns"><h4>Database Columns</h4></a>
+		Full information about setting up database columns can be found in the howto_user-defined_forms.html document.<br /><br />
+
+		<a name="adminforms" id="adminforms"><h4>Forms</h4></a>
+		Full information about user-defined forms can be found in the howto_user-defined_forms.html document.<br /><br />
+
+		<a name="adminformfields" id="adminformfields"><h4>Form Layout</h4></a>
+		Full information about setting up form layouts can be found in the howto_user-defined_forms.html document.<br /><br />
+
+		<a name="adminentries" id="adminentries"><h4>View/Update Entries/Unpaid List/Waiting List</h4></a>
+		Race entries made through both the public entry system and the administration system can be viewed, updated and deleted through this option.<br /><br />
+		If entries are deleted, any allocated race numbers are immediately released to the available race number pool.<br /><br />
+		Updating entries uses the administration entry form. See <a href="#adminentry">here</a> for full instructions on the administration entry form.<br /><br />
+		Various options are available to filter and sort the extracted entries. After changing any of the criteria, it is necessary to click the <em>Search</em> button to re-load the list<br /><br />
+		There are three selectable <em>List Types</em>
+		<ul>
+			<li>Entry List</li>
+			This is the list of entries for which payment has been accepted. By clicking on the list <em>Name</em> you can update any details on the entry.<br /><br />
+			<li>Unpaid List</li>
+			Entries which have failed to go through the payment process are placed on the Unpaid List for manual follow-up. There are several reasons why an entry could be placed on the unpaid list:-
+			<ol>
+				<li>the payment failed (e.g. invalid credit card)</li>
+				<li>the user cancelled out before the payment was made</li>
+				<li>the payment process succeeded but a confirmation was not received</li>
+				<li>the entry was made through the administration system and the <em>Payment received</em> tickbox was not ticked</li>
+			</ol>
+			The action to take for each unpaid entry. For reasons 1 & 2, we advise contacting the entrant at least once to point out that their entry was not accepted (of course you should check that they haven't successfully entered subsequently before contacting them). The unpaid list for each race is included in the <a href="#admindownload">Excel download</a> to use as the basis for manual emails to all entries on the unpaid list.<br /><br />
+			Entries caused by reason 3 should be picked up when <a href="#adminreconciliation">reconciling Nochex</a>. Entries that have been successfully paid but are on the unpaid list need to be manually marked as paid by clicking the waiting list entry <em>Name</em>, ticking the <em>Payment received</em> tick box and clicking the <em>Continue to Step 3</em> button. This will automatically allocate a race number and move the entry from the unpaid list to the entry list.<br /><br />
+			<li>Waiting List</li>
+			By default, the waiting list is shown in surname sequence. When you select to display the waiting list, selecting the <em>Sort entries by</em> setting of <em>Sequence received</em> will ensure that the list shows in the correct sequence (oldest first).<br /><br />
+		</ul>
+
+		<a name="admincto" id="admincto"><h4>View/Update Changes/Transfers/Offers</h4></a>
+		This option allows you to see the current and historic details of entry changes and transfers as well as waiting list offers.<br /><br />
+		There are five different selections which can be made:-
+		<ol>
+			<li>Open Only</li>
+			This shows all changes, transfer and waiting list offers which have not been authorised through their confirmation emails and, in the case of waiting list offers, those offers which have yet to be allocated to a person on the waiting list {show as Offer(open)} or have yet to be accepted by a person on the waiting list {show as Offer(Offered)}.
+			<li>All</li>
+			This lists all changes, transfers and waiting list offers regardless of their status.
+			<li>Superceded Only</li>
+			This lists all changes, transfers and waiting list offers which have been superceded by a later change, transfer or offer.
+			<li>Closed Only</li>
+			This lists all changes, transfers and waiting list offers which have been fully processed and are now deemed closed.
+			<li>Offered Entries Only</li>
+			This is a special option which extracts just those waiting list offers which have yet to be allocated to a person on the waiting list {show as Offer(open)} or have yet to be accepted by a person on the waiting list {show as Offer(Offered)}.
+		</ol>
+		Clicking on a <em>Code</em> shows the complete details of the change, transfer or waiting list offer.<br /><br />
+		The action that is displayed to the right of an entry can be used to delete a change, transfer or waiting list offer, or, if the waiting list offer has been offered to a person on the waiting list, it will be possible to <em>re-offer</em> the entry. This special option will release the offer from the person on the waiting list. They will be placed at the bottom of the waiting list. Running <a href="#adminwlm">waiting list matching</a> will then allocate the offer to the next person on the waiting list.<br /><br />
+
+		<a name="adminwlm" id="adminwlm"><h4>Waiting List Matching</h4></a>
+		This option automatically matches waiting list offers against entries on the waiting list. This routine runs automatically whenever an entry is made to the waiting list, whenever an offer made to the waiting list is authorised and whenever a re-offer is made from the view/update changes/transfers/offers option, so it is not normally necessary to run this manually.<br /><br />
+
+		<a name="admindownload" id="admindownload"><h4>Download to Excel</h4></a>
+		<strong>** NOTE **</strong> Although it is still possible to use this option to manually download entrants, it is much easier to use the Offline Administration Application which completely automates the process and this is now the recommended way of working. This manual option may be removed in future.<br /><br />
+		This option extracts a large part of the information held on the entries and unpaid lists for each race (on seperate worksheets).<br /><br />
+
+		<a name="adminuploadnochex" id="adminuploadnochex"><h4>Upload Nochex CSV</h4></a>
+		In order to facilitate the reconciliation of Nochex payments against entries, it is possible to upload the csv extract produced from the Nochex system directly into the openEntrySystem.<br /><br />
+		The upload routine automatically checks to see whether any data already exists and will only process uploaded information once so you can extract and upload the Nochex data as many times as you like.<br /><br />
+		Once the upload process is complete, the Nochex reconcilation page is shown.<br /><br />
+
+		<a name="adminreconciliation" id="adminreconciliation"><h4>Reconciliation Summary</h4></a>
+		This option allows you to display the Nochex reconcilation summary page.<br /><br />
+		Firstly, the base financial figures are shown based on the payment records on the paid entries. The figure shown in brackets to the right of the Nochex balance is the figure calculated from the Nochex upload and should agree.<br /><br />
+		The remaining breakdown of each race is calculated using counts of entries multiplied by their corresponding fees. The <em>Total</em> shown at the bottom of the page should agree with the <em>Total Entries</em> figure shown at the top of the page.
+		
+		<a name="adminuploadresults" id="adminuploadresults"><h4>Upload Results</h4></a>
+		<strong>** NOTE **</strong> Although it is still possible to use this option to manually upload results, it is much easier to use the Offline Administration Application which completely automates the process and this is now the recommended way of working. This manual option may be removed in future.<br /><br />
+		It is fairly simple to upload results into the openEntrySystem and then to use the results pages to display them.<br /><br />
+		There are two possibilities:-
+		<ol>
+			<li>Historical Results</li>
+			Historical results are results of races where the entrant details are not in the openEntrySystem. With these results, it is necessary to upload all the information that will be displayed on the results page, including entrant name, category etc.<br /><br />
+			These results are displayed using the results.php script.<br /><br />
+			<li>Live Race Results</li>
+			Live race results are results of races where the entrant details are already in the openEntrySystem. With these results, it is only necessary to upload the entrant id, their race position, time and, optionally, chip time and age grade. All the other details will be brought in from the race entrant details already held on the system.<br /><br />
+			These results are displayed using the results.php script.<br /><br />
+		</ol>
+
+		The presence of the Entry ID field on the uploaded csv determines whether historical or live race results are constructed on the system. If an Entry ID field is present, live race results are constructed, otherwise historical results are constructed.<br /><br />
+
+		You can either construct a new csv file for the upload or you can use the openEntrySystem local Excel file to produce a csv. The column headings used are important as they instruct the upload routine what data is included and which column it is in.<br /><br />
+		The full list of result upload fields is:-
+		<ul>
+			<li>Race ID (mandatory)</li>
+			This is the race ID of the race (you must set up historical races before you attempt an upload).
+			<li>Entry ID (mandatory for live results, must not be present for historical results)</li>
+			This is the Entry ID for each entrant (from the openEntrySystem entries table).
+			<li>Race# (optional, ignored if Entry ID given)</li>
+			This is the entrant's race number.
+			<li>Category (optional, ignored if Entry ID given)</li>
+			This is the entrant's category (e.g. MV40). No validation takes place so you can created any category you like.
+			<li>Forename (optional, ignored if Entry ID given)</li>
+			This is the entrant's first name.
+			<li>Surname (optional, ignored if Entry ID given)</li>
+			This is the entrant's surname.
+			<li>Gun Time (mandatory)</li>
+			This is the official gun to finish time.
+			<li>Chip Time (optional)</li>
+			If you have chip timing, this is the chip time.
+			<li>Position (mandatory)</li>
+			This is the official race position of the entrant (1=1st, 2=2nd etc.).
+			<li>Club (optional, ignored if Entry ID given)</li>
+			This is the entrant's club name. No validation takes place so you can include any club name you like and 'unattached'.
+			<li>Age Grade (optional)</li>
+			If you have the facility to calculate the age grade, you can put the figure here. The openEntrySystem local Excel file automatically calculates this.
+		</ul>
+
+		You can upload the data as many times as you like. The system checks to see whether any data has changed or been added and will update the results accordingly.<br /><br />
+
+		<a name="adminlogout" id="adminlogout"><h4>Log Out</h4></a>
+		This option logs you out of the administration system.
+		
+		<a name="technical" id="technical"><h2>General Technical Information</h2></a>
+		The openEntrySystem is delivered with most of the public routines set up to open in a new browser window with the back button etc. not directly available. This is deliberate as use of the back button during the payment process (for example) will produce unpredictable results. It is not advisable to change this.<br /><br />
+		
+		<a name="technicalemail" id="technicalemail"><h3>Automatic emails</h3></a>
+		There are 8 email templates which are used to construct the various emails sent out by the system. These can be found in the pages section of the administration system under the shown page identifiers:-
+		<ul>
+			<li>Confirm Change Email (emailconfirmchange)</li>
+			This email is sent out when a request to change an entry has been made. It contains a link and a reference number that must be used to confirm that the change request was made by the original entrant. If the original entrant did not give an email address (this can only happen if they are entered through a non-online method, e.g. postal), a message will appear at the top of the email giving telephone contact details for the race administrator to manually use to confirm the change. 
+			<li>Confirm Offer Email (emailconfirmoffer)</li>
+			This email is sent out once a waiting list offer has been confirmed. It details some of the terms and conditions of the waiting list system and gives instructions as to revoke the offer should the entrant change their mind.
+			<li>Entry Confirmation Email (emailentry)</li>
+			This email is sent out whenever an entry is added to the system (after payment through the public entry system, after confirmation of a transfer or after payment through the waiting list system).
+			<li>Confirm Offer Email (emailconfirmoffer)</li>
+			This email is sent out when a request to offer an entry to the waiting list has been made. It contains a link and a reference number that must be used to confirm that the offer was made by the original entrant. If the original entrant did not give an email address (this can only happen if they are entered through a non-online method, e.g. postal), a message will appear at the top of the email giving telephone contact details for the race administrator to manually use to confirm the offer. 
+			<li>Confirm Transfer Email (emailconfirmtransfer)</li>
+			This email is sent out when a request to transfer an entry has been made. It contains a link and a reference number that must be used to confirm that the transfer request was made by the original entrant. If the original entrant did not give an email address (this can only happen if they are entered through a non-online method, e.g. postal), a message will appear at the top of the email giving telephone contact details for the race administrator to manually use to confirm the transfer. 
+			<li>Add to Waiting List Confirmation Email (emailwlconfirmed)</li>
+			This email is sent out when a entry has been made onto the waiting list. It details some of the terms and conditions of the waiting list system and gives instructions as to remove the waiting list entry should the potential entrant change their mind.
+			<li>Entry Available Email (emailentryavailable)</li>
+			This email is sent out to a person on the waiting list when a place becomes available. It details some of the terms and conditions of the waiting list system and contains a link and a reference number that must be used to process the payment for the entry.
+			<li>Offer Confirmed Email (emailofferconfirmed)</li>
+			This email is sent out to a person who has offered their place to the waiting list confirming that this has happened. It explains the procedure for cancelling the offer should the person change their mind.
+		</ul>
+
+		<a name="technicalpet" id="technicalpet"><h3>Public Entry Form</h3></a>
+		The public entry form is used in several scripts, but is contructed from a single asp script; inc_publicentryform.php. Any changes to this single script will be automatically made across the system.<br /><br />
+
+		<a name="technicalaet" id="technicalaet"><h3>Administration Entry Form</h3></a>
+		The administration entry form is used in several scripts, but is contructed from a single asp script; inc_adminentryform.php. Any changes to this single script will be automatically made across the system.<br /><br />
+	</body>
+</html>

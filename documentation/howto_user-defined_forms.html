@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="../css/styles.css" rel="stylesheet" type="text/css">
+		<title>How To - User-Defined Forms</title>
+	</head>
+
+	<body style="width: 700px; margin-left: 50px;">
+		<h1>How To - User-Defined Forms</h1>
+		<h2>Overview</h2>
+		With version 2 of OES it is now possible to set up multiple entry forms and structure them with user-defined content and layout.<br /><br />
+		In order to facilitate the flexibility required, some maintenance functions update the structure of the underlying database and, as such, special care should be taken.<br /><br />
+		To avoid confusion with the facility to specify the column on the form where data is shown, the word 'field' is sometimes used in this manual to describe what are, technically, database columns.<br /><br />
+		<h2>Defining New Fields</h2>
+		OES v2 is delivered with one standard form, for Road Running Races. To accommodate other event types and specialized races, it is to be expected that additional fields will be required to store data from their differing entry forms. Before the form itself can be tackled, it is necessary to add the additional fields to the database.<br /><br />
+		<strong>As the database maintenance functions update the database structure, it is strongly recommended that you set all sites to 'down for maintenance' during the use of the admin functions discussed here.</strong><br /><br />
+		<h3>Database Groups</h3>
+		The data stored in the database for all entries is defined in structured groups called database groups. The data for the standard entry form is defined under the 'Base Group' database group. This group cannot be changed. Further groups can be added and the structure of these groups is under user control. The group itself has no function apart from grouping together additional database fields into logical structures, allowing database restructuring to the made in a single update and for preventing changes to the mandatory 'Base Group' fields.<br /><br />
+		<h3>Database Columns</h3>
+		Within the Database Groups Maintenance in the admin area of the system, you can maintain the underlying database fields using the 'Edit Database Columns' action listed to the right of all database groups.<br /><br />
+		The following information can be maintained for each database column:-<br /><br />
+		<em>Name</em>: This is the name of the underlying database column that will be created. Although it isn't strictly necessary, it is recommended that you use names that begin with an alphabetic character and that do not contain special characters like asterisks or commas etc. It is the OES convention to use purely lowercase names.<br /><br />
+		<em>Description</em>: You can enter here free-format text to describe the column. The text has no function and is not part of the database update.<br /><br />
+		<em>Type</em>: This describes the type or data that will be stored in the underlying database:-<br /><br />
+		<ul>
+			<li>Integer: simple numbers only with no decimals and a reasonably limited number range.</li>
+			<li>Double: more complex numbers with 2 decimals and a very large number range.</li>
+			<li>Date: self-explanatary</li>
+			<li>Boolean: A simple column allowing Yes/No or True/False selections. This column type would normally be used to produce a checkbox on the entry form.</li>
+			<li>Text: A text column with a specified maximum length.</li>
+			<li>Memo: A text column with no maximum length. When used on an entry form, this will produce an automatically-expanding text box allowing large amounts of text to be entered. In general, it should not be used for fields which will appear on the public entry form.</li>
+		</ul>
+		<em>Length</em>: This entry only appears when the 'Text' type is selected and is used to allocate the maximum text length allowed.<br /><br />
+		<em>Entry/Entrant/Transfer Relevant</em>: These checkboxes are used to determine whether the database column is added to the entries, entrants and transfers tables.<br />
+		<ul>
+			<li>In general, the column is always <em>entry relevant</em>.</li>
+			<li>The column is not <em>entrant relevant</em> when it is associated with a race not the person (e.g. 'age category' is not <em>entrant relevant</em> as the age category is based on the date of the race, whereas 'age' is <em>entrant relevant</em> as it is the same for a person regardless of the race).</li>
+			<li>A column is <em>transfer relevant</em> when it changes or can be changed during a transfer or change (e.g. the 'paid' indicator is not <em>transfer relevant</em> as it doesn't change during a transfer or change).</li>
+		</ul>
+		<em>Transfer/Change Persist</em>: These checkboxes display if the database column is marked as not <em>transfer relevant</em>. Normally, if a database column isn't <em>transfer relevant</em> it will get cleared during a transfer or change. These checkboxes can be used to specify that the data in these columns is not cleared during either a change, transfer or both.<br /><br />
+
+		<h3>Updating the Database</h3>
+		Adding and updating user-defined database columns is carried out using the Database Column Maintenance through the relevant Database Group. The underlying database is not updated immediately, it is only updated when the 'Enable' action is used (within the Database Group Maintenance). Hence a whole Database Group of database columns is enabled in one step and the number of atomic database updates is kept to a minimum. Once the database group is enabled, it is only possible to update a very small subset of the information on database columns and it is not possible to remove or reverse the database update.<br /><br />
+		<h2>Structure of a Form</h2>
+		Forms are constructed from nine different types of form fields: Section Headings, Text Boxes, Free-Format Text, Check Boxes, Radio Buttons, a Race List, Dates, Date and Time and, finally, Charge Summary Amounts. In addition to describing the content of the form itself, each element has additional attributes associated with it that describe:-
+		<ul>
+			<li>how it appears on the form (its sequence on the form, whether in shows on public, admin or both forms, whether it appears in the left, right or centre column and its width)</li>
+			<li>how it behaves (whether it is mandatory, its valid values and whether any special character formatting is required e.g. proper-name capitalisation)</li>
+			<li>conditions which affect if or how it is displayed</li>
+		</ul>
+		A full description of these attributes appears in the Validation and Formatting, Layout and Control sections later in this document.<br /><br />
+		<h3>Form Field Types</h3>
+		These are described below (the internal name of each element - which corresponds to the 'Type' shown on the Form Field List page - is shown in brackets):-
+		<ul>
+			<li>Section Headings (section)</li>
+			Section headings appear before each section of the form, showing a number image (a grey circle with a white number) and a piece of text (the section heading). These elements have no real function beyond grouping form elements into logical areas of the form and dividing the form up into a visually pleasing structure.
+			<li>Text Boxes (text)</li>
+			Text boxes are the fundamental data element within the form. They allow text and numbers associated with an entry to be stored. Examples include all the name and address fields. A database field added in the previous section must be linked to the text box using the database name combo box.
+			<li>Free-Format Text (memo)</li>
+			Free-format text can be placed anywhere on the form with html formatting (if required). An example of this is the text that appears on the public entry form below the email confirmation
+			field stating 'Please note:......'.
+			<li>Check Boxes (checkbox)</li>
+			Check boxes are used to store yes/no answers for an entry. An example of this is the Affiliated? field with allows a user to specify whether they are a member of an affiliated club or not. A database field added in the previous section must be linked to the check box using the database name combo box.
+			<li>Radio Buttons (radio)</li>
+			Radio buttons are used to store single selections from a small number of choices. An example of this is the t-shirt field where an entrant is required to choose the size of t-shirt they require from the available sizes S, M, L and XL. The valid choices for each radio button are configured using the Valid Values attribute described in the Validation and Formatting section later in this document.
+			A database field added in the previous section must be linked to the radio button using the database name combo box.
+			<li>Race List (races)</li>
+			This is a special element which must appear in the first section of the form. This section lists the available races, but it also includes some special internal control data in hidden form fields and some special admin-only fields (e.g. combo boxes for the selection of pre-allocated race numbers).
+			<li>Dates (date)</li>
+			The date element is essentially a special form of text box which is coded to display a date selection dialog and is also coded to validate so that only valid dates can be entered. A database field added in the previous section must be linked to the date using the database name combo box.
+			<li>Dates and Times (datetime)</li>
+			This is the same as the date element except that an additional time section is available for entry too. A database field added in the previous section must be linked to the date using the
+			database name combo box.
+			<li>Charge Summary Amount (sum)</li>
+			The calculated entry charges are displayed in a special section at the bottom of the form. There are only a limited number of available charge fields and these are not configurable by the user. A special internally-calculated database field must be linked to each charge summary amount using the database name combo box. The special fields available are prefixed by an asterisk and are described
+			in the Special Functions section of this document.
+		</ul>
+		<h3>Validation and Formatting</h3>
+		Simple validation rules can be applied to text and radio button elements on a form (dates and times are obviously validated as well, but this validation is not under administrator control). Text and radio buttons can be defined as mandatory by ticking the 'Mandatory' attribute on the form field.<br /><br />
+		Valid values for numeric fields can be defined using the 'Minimum/Maximum Value' settings.<br /><br />
+		The values associated with radio buttons are defined in the 'Values' attribute of the form field. Individual radio buttons are defined separated by a semi-colon. Each radio button definition is made up of two elements separated by a colon. The first element is the caption that will display on the form, the second element is the data that will be stored in the database when that radio button is selected.<br /><br />
+		Optionally, the text entered into text boxes can be forced into a suitable format using the 'Format' attribute on the form field. This specifies whether the text will be forced to 'All Uppercase', 'All Lowercase' or 'Proper Name' (meaning the first character of every word is capitalised and all other characters are lowercase).<br /><br />
+		In addition to the user-defined validation, there are a number of built-in validations which occur and which are not under the control of the administrator.
+		<ul>
+			<li>Date of Birth</li>
+			The date of birth entered is validated against all the races selected and an error is issued if the entrant is too young to enter any of the races.
+			<li>Email</li>
+			A simple validation is made on the format of any email address entered by checking that it contains a '@' and a '.'.<br /><br />
+			Additionally, on the public entry form only, it is necessary for the entrant to confirm their email address by entering it twice. The two entries are validated to ensure they are the same.
+		</ul>
+		<h3>Layout</h3>
+		The layout of the form shown on the entry form page is constructed, at run time, from the attributes and entries on the form field database table. There are four form field attributes which directly control the way the form fields are shown on the form:-
+		<ul>
+			<li>Sequence</li>
+			Form fields are positioned on the generated form in ascending order of sequence number. If two or more form field entries are given the same sequence number, the results will be indeterminate.<br /><br />
+			A 'Re-number' option is provided to renumber all sequence numbers into steps of 10, should all the gaps between sequence numbers be filled.
+			<li>Show on Form</li>
+			There are a number of form fields set up on the base form which have the 'Show on Form' attribute unticked. These form fields are special admin-only entries which are hidden on the public form (they are still present as they are needed to correctly construct a database entry). In general, should you not want one of the base form fields on the entry form you are constructing, you should untick
+			the 'Show on Form' attribute rather than delete the form field.
+			<li>Column</li>
+			Forms are made up of groups of form fields which can appear in up to two side-by-side columns. The form fields in these columns are defined such that tabbing between entry fields goes from the top to the bottom of the 'Left Column' then continues to the top of the 'Right Column' down to the bottom of that column, then moving on to the next form field at the top of the next defined column.<br /><br />
+			Alternatively, one wide column 'Full Column' can be specified which spans the whole width of the form.<br /><br />
+			Generally, a form will be constructed from a combination of all three column types.
+			<li>Width</li>
+			The displayed width of text columns can be defined (in pixels). The width specified has no affect on the length of the underlying data. If the data is too long for the specified width, scrolling will be needed to see the whole text.
+		</ul>
+		<h3>Control</h3>
+		There are some attributes of the form which are dependent on what the entrant selects during online entry. For example, the display of the t-shirt field depends on the configuration of the races chosen by the entrant in the 'Race List', in that it only displays if a selected race has t-shirts enabled. This is controlled by the 'control' attribute. There are currently 19 different control attributes and these are described below:-
+		<ul>
+			<li>Keep on Same Line (*NOCLEAR)</li>
+			This control is used solely to format aspects of the race list and admin-specific entries at the top of the form. It ensures that the list of races appears directly to the right of the section heading rather than below it (on the public form only). This reduces the length of the form and therefore the amount of scrolling an entrant has to do. It is not recommended that this control is used outside section 1.
+			<li>Show if option 1 enabled (*ONOPTION1)</li>
+			If any race chosen in the 'Race List' is configured with option 1 enabled, the form fields with this control will display.
+			<li>Show if option 2 enabled (*ONOPTION2)</li>
+			If any race chosen in the 'Race List' is configured with option 2 enabled, the form fields with this control will display.
+			<li>Show if t-shirts enabled (*ONTSHIRT)</li>
+			If any race chosen in the 'Race List' is configured with t-shirts enabled, the form fields with this control will display.
+			<li>Show if own chip allowed (*ONOWNCHIP)</li>
+			If any race chosen in the 'Race List' is configured with own-chip enabled, the form fields with this control will display.
+			<li>Show if teams enabled (*ONTEAM)</li>
+			If any race chosen in the 'Race List' is configured with teams enabled, the form fields with this control will display.
+			<li>Show if clubs enabled (*ONCLUB)</li>
+			If any race chosen in the 'Race List' is configured with clubs enabled, the form fields with this control will display (there is further special functionality associated with club affiliation which is described in the Special Functions section of this document).
+			<li>Show if selected club is unaffiliated (*ONNOTAFFIL)</li>
+			If any race chosen in the 'Race List' is configured with clubs enabled and the chosen club is not defined as affiliated, the form fields with this control will display (there is further special functionality associated with club affiliation which is described in the Special Functions section of this document).
+			<li>Show if transferring an affiliated entry (*ONTRANSFERAFFIL)</li>
+			If a transfer is being performed and the original entry was for an affiliated club, the form fields with this control will display.
+			<li>Show if changing an affiliated entry (*ONCHANGEAFFIL)</li>
+			If a change is being performed and the original entry was for an affiliated club, the form fields with this control will display.
+			<li>Show if transferring an unaffiliated entry (*ONTRANSFERNONAFFIL)</li>
+			If a transfer is being performed and the original entry was for an unaffiliated club, the form fields with this control will display.
+			<li>Show if changing an unaffiliated entry (*ONCHANGENONAFFIL)</li>
+			If a change is being performed and the original entry was for an unaffiliated club, the form fields with this control will display.
+			<li>Show if transport enabled (*ONTRANSPORT)</li>
+			If any race chosen in the 'Race List' is configured with transport enabled, the form fields with this control will be displayed.
+			<li>Show if transport is required (*ONTRANSPORTREQ)</li>
+			If any race chosen in the 'Race List' is configured with transport enabled and the entrant selects that transport is required, the form fields with this control will be displayed.
+			<li>Show if a transport fee is to be charged (*ONTRANSPORTFEE)</li>
+			If any race chosen in the 'Race List' is configured with a transport fee other than 0 and the entrant has selected that transport is required, the form fields with this control will display.
+			<li>Show if gift aid enabled (*ONGIFTAID)</li>
+			If any race chosen in the 'Race List' is configured with a charity fee other than 0, the form fields with this control will display.
+			<li>Show if chip rental fee chargeable (*ONCHIPFEE)</li>
+			If any race chosen in the 'Race List' is configured with a chip rental fee other than 0, the form fields with this control will display.
+			<li>Show if charity fee charged (*ONCHARITY)</li>
+			If any race chosen in the 'Race List' is configured with a charity fee other than 0, the form fields with this control will display.
+			<li>Show if discount given (*ONDISCOUNT)</li>
+			If the criteria for a multiple-race-entry discount are met for a race series, the form fields with this control will display.
+			<li>Show on admin entry form only (*ONADMIN)</li>
+			The form fields with this control will only appear on the admin entry form.
+		</ul>
+		<h3>Special Functions</h3>
+		Club affiliation and the charging of affiliation fees is controlled by a combination of the affiliation setting on the club table and the race licence number entered on the entry form. If a club is marked as affiliated, the affiliation fee (if present on the race) is not charged. If the club is not marked as affiliated, the individual can indicate their own affiliation status by entering their
+		race licence number. Under these circumstances, if a race licence number is entered, the affiliation fee is not charged and the entry is marked as affiliated. If the race licence number is left blank, the affiliation fee is charged and the entry is marked as unaffiliated.<br />
+	<br />
+		Likewise, the Chip-Rental fee is only charged if the own-chip number is left blank and, like online charges, the chip-rental fee is only charged once for an entry (so if the entrant elects to enter multiple races, only one fee is charged).<br /><br />
+		As previously mentioned, there are a number of fields which, although set up on the base form, appear only on the admin entry form. There are:-
+		<ul>
+			<li>Payment Received</li>
+			The setting of this flag can be changed to indicate that an unpaid entry has been paid for. Any online entries where the online payment system fails to report success, will be marked as unpaid and will appear on the unpaid list. These entries can be moved to the entries list and have race numbers allocated by ticking this checkbox. Similarly, an erroneous entry on the entries list can be 'removed' by unticking this mark. Any race number already allocated will be made available to the system and the entry will move to the unpaid list. This is subtly different to using the delete function on the entry list in that the delete function doesn't move the entry to the unpaid list - it actually marks the entry as deleted and it disappears from both the entries and unpaid lists.
+			<li>Online Fee Paid</li>
+			The setting of this flag can be changed to reflect any discrepancies in the charging of online entry fees. For example, if an online entry payment fails and the entrant elects to send a cheque instead, the entry on the unpaid list (which resulted from the failed attempt to enter online) can be used as the basis of the entry when the cheque arrives by post. Strictly speaking, this would now no longer be an online entry, hence the online fee paid check box should be unticked. Ensuring that the correct setting is made here will ensure that the reconciliation reports report the correct total fee paid.
+			<li>Discount</li>
+			The discount amount given is normally only set by the system when a series race entry meets the criteria for giving multi-race discount. However, manual discounts can be entered through the admin system to allow adhoc discounts to be accepted. Once again, this allows the reconciliation reports to reflect the true fees paid. Should you wish to add a surcharge to an entry, you can enter a negative discount which will have the affect of increasing the total fee paid.
+			<li>Override Category</li>
+			Age categories are normally calculated automatically by the system using the age category lists set up elsewhere in the admin system. If you wish to override the automatic age category, you can enter the override here. As example of this is where the race has race pacers provided by the race organisers. These pacers get an official time (if they finish), but are not eligible for age category prizes. These special entrants can be given a unique category e.g. 'PACER'.
+			<li>Send Email</li>
+			When amending entries through the admin system, you can choose to send an entry confirmation email showing the amended details. An email is not normally sent for updates made through the admin system. Although this checkbox also appears when adding entries through the admin system, its setting is ignored - an email is always sent out for entries added through the admin system.
+			<li>Waiting</li>
+			This checkbox will only appear if a waiting list is active for a race and the entry being changed is on the waiting list or is in the process of being offered a place. Entries can be removed from the waiting list by unticking this flag. They will then appear on the unpaid entry list.
+			<li>Offer Count</li>
+			This text box only appears if a waiting list is active for a race and the entry being changed is on the waiting list or is in the process of being offered a place. This field shows a count of the number of times entries have been offered to this particular waiting list entry. The count increases each time a place is offered. If the time limit for responding to an offer is exceeded, the waiting list entry is moved to the bottom of the waiting list. If it reaches the top again it will be offered another place and this count will be incremented.
+			<li>Waiting Since</li>
+			These date and time entry boxes only appear if a waiting list is active for a race and the entry being changed is on the waiting list or is in the process of being offered a place. The date and time shown are those allocated either when the waiting list entry was originally added or when the entry was moved to the bottom of the waiting list when an offer expired. The waiting list entry with the oldest date and time will be at the top of the waiting list. Changing the date and time here can be used to manually alter the waiting list sequence (for example to move a waiting list entry back to the top of the queue after it was moved to the bottom by an offer expiry).
+		</ul>
+		There are a number of internally-calculated database fields which show in the 'database name' attribute list of form fields. There are:-
+		<ul>
+			<li>Affiliation Fee (*afee)</li>
+			This field contains a total of all the affiliation fees charged on chosen races.
+			<li>Online Entry Charge (*cfee)</li>
+			This field contains a total of online fees charged (as online fees are only charged once per entry, this will reflect the online fee from one of the chosen races (see the Special Considerations section for potential problems).
+			<li>Charitable Donation (*charfee)</li>
+			This field contains a total of all the charity fees charged on chosen races.
+			<li>Chip Rental Fee (*chipfee)</li>
+			This field contains a total of chip rental fees charged (as chip rental fees are only charged once per entry, this will reflect the chip rental fee from one of the chosen races (see the Special Considerations section for potential problems).
+			<li>Chosen Club Name (*club_name)</li>
+			This field contains the previously selected club name (if any) chosen from the club search.
+			<li>Discount Given (*discfee)</li>
+			This field contains a total of all the discounts and surcharges. This would normally be the internally-calculated multiple race discount. On an admin entry form, this would be the amount entered in the discount field described in the Special Functions section.
+			<li>Confirmation Email (*email2)</li>
+			This field contains a duplicate of the email address for public entry changes.
+			<li>Race Fee (*fee)</li>
+			This field contains a total of all the base race fees charged on chosen races.
+			<li>Club for Searching (*searchclub)</li>
+			This field contains the club search criteria entered so far.
+			<li>Total Payable (*tfee)</li>
+			This field contains the total fee charged.
+		</ul>
+		<h2>Defining a New Form</h2>
+		Once all the database fields have been set up, the layout of the entry form can be configured. The best way to start is to copy an existing form and update the resultant copy.<br /><br />
+		New form fields can be inserted into the sequence, taking care not to throw-out the layout by switching columns too often.<br /><br />
+		Any form fields not required on the form should be hidden by unticking their 'Show on Form' attributes rather then deleting them.<br /><br />
+		<h2>Multi-Form Mode</h2>
+		When there are more than one active races with different forms set up in a site, a new step is introduced into the public and admin entry processes. Once the terms and conditions are accepted, the user will be presented with a list of the forms. The form chosen will be used to limit the races shown on the entry form (i.e. only races with the chosen form will be displayed). The name that is used on the form is therefore important and should describe the type of event rather than the form. For example, if you had three road running races set up on the system and two rowing races, the forms would be best named 'Road Running' and 'Rowing' respectively rather than 'Form for Road Running' and 'Form for Rowing'.<br /><br />
+		Multi-Form Mode can be avoided if races are split into separate sites. See the 'How-To: Multiple Sites' for more information on this.<br /><br />
+		<h2>Special Considerations</h2>
+		The race options section of the entry form contains all those items which are configurable as optional entries for each race. Options show if at least one race is selected at the top of the form with those options configured. As such, the race options that appear might not be relevant to all races selected. For example you may have two races set up where one race has a race t-shirt and the other doesn't. If both these races are selected for entry at the top of the form, the t-shirt radio buttons display, even though they are only relevant for the first race. Under these circumstances, it is wise to add some memo text to the form explaining that t-shirts may not be included for all races.<br /><br />
+		A problem can arise if you set up more than one race with differing chip rental or online charge fees. As these fees are only charged once per entry, if you have differing amounts on each race, the calculation of these fees will have a differing basis depending on the order in which the races are selected and/or deselected. This may result in negative charges. In general it is advisable to keep online charges and chip rental fees the same on all races. If it is necessary to have different charges, consider setting up a different form. This will activate the 'Multi-Form Mode' described above and this can be used to ensure that it is not possible to concurrently enter races with differing pricing structures.<br /><br />
+		The captions for the configurable race options 1 & 2 should now be configured through the form fields. In versions of OES prior to v2 these captions were configurable on each race.<br /><br />
+		If race transfers/changes are permitted, there are potential problems where the transfer or change affects the total fee charged. For example if an entrant decides to change their unaffiliated entry to affiliated, the reconciliation reports will highlight a difference as the affiliation fee was paid, but the entry fee shown on the entry now reflects the affiliated status where the affiliation fee was not required. In this particular case, it is necessary to manually fix the entry by entering a surcharge (i.e. a negative discount) in the discount field of the entry in question to reflect the higher amount paid. The system currently prevents an entrant from changing their entry from affiliated to unaffiliated where an extra charge would be required. Hence it is only currently possible to transfer or change an affiliated entry to another affiliated entry. The same problem exists with chip rental fees.<br /><br />
+	</body>
+</html>

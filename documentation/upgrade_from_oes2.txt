@@ -1,0 +1,5 @@
+A facility is available to upgrade an ASP/Access version of OES to the PHP/MySQL version.
+
+You'll first need to first convert your Access database to MySQL. We've successfully used 'Access to MySQL' available from www.bullzip.com. If you don't want to do this yourself, we're happy to do this for you.
+
+Once the database is converted to MySQL, it is then possible to the normal installation routine as outlined in the User Manual.

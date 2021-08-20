@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="../css/styles.css" rel="stylesheet" type="text/css">
+		<title>How To - Locales and Languages</title>
+	</head>
+
+	<body style="width: 700px; margin-left: 50px;">
+		<h1>How To - Locales and Languages</h1>
+		<h2>Overview</h2>
+		OES has been fully internationalised in version 2. Local formats for dates and numbers can be specified using the language/locale code which is also used to control the language displayed to the end user. The locale codes used, must correspond with the standard two-part codes in widespread use across the internet. These are five character codes made up of a language code and a cultural reference code separated by a hyphen (e.g. en_gb indicates English language, Great Britain cultural code).
+		<h2>Locales</h2>
+		OES is delivered with one locale set up - en_gb (English - UK). With this default configuration, the system operates in single currency mode with dates formatted in the UK format dd/mm/yyyy and numbers with '.' for decimal points and commas as thousand-separators.<br /><br />
+		The default locale can be changed easily without switching to a multi-language environment by setting up a new locale, deleting the en_gb locale and maintaining the site(s) to point to the new locale. For example, to switch to en_us as the default locale, add the en_us locale, delete en_gb and attach en_us to all the sites. The system will operate as before, but dates will be entered and displayed in the US date format mm/dd/yyyy.<br /><br />
+		When changing to a locale with a different date format to the UK (dd/mm/yyyy) format, you will need to translate some text items which prompt for the date format on entry forms. These can be found on the following pages:-
+		<ul>
+			<li>Public Entry 2</li>
+			<li>Transfer Process 1</li>
+			<li>Transfer Process 3</li>
+			<li>Offer to Waiting List</li>
+			<li>Add to Waiting List (Entry Form)</li>
+		</ul><br />
+		<h2>Languages</h2>
+		As previously mentioned, OES operates in single-language mode when one language/locale. If more than one language/locale code is set up, the system switches to multi-language mode.<br /><br />
+		<h3>Multi-Language Mode</h3>
+		As soon as more than one language/locale has been set up, a selection box will appear on all the content-managed pages of the system (i.e. those pages with a URL ending <strong>index.php?id=xxx</strong>). Initially, the language/locale selected is conditioned on the default locale reported by the browser. If a different language/locale is selected from the selection box, the system will immediately switch to that language/locale and this setting will be stored in a cookie (if enabled) for all future access to the site.<br /><br />
+		The selected language/locale remains active on all public pages of OES (even those without the selection box). <strong>NOTE: the selected language/locale also remains active when using the admin system, but as the admin system only operates in English, the language/locale setting will only affect the displayed date and number formats. An exception to this is the admin entry form which is heavily-based on the code used for the public entry form so this will operate in the chosen language.</strong><br /><br />
+		Changing to language/locale has an immediate effect on the locale and the date and number formats displayed, but it won't necessarily have any effect on the language displayed. If the page content hasn't been translated into the chosen language, the default language will continue to be displayed. If a page has only been partially translated, you will see a mixture of languages. This is by design - it ensures that all content shows regardless of the stage that the translation process is at. It also enables new locales to be used without affecting the default language text (the en_us scenario outlined in the <em>locales</em>
+		section for example).<br /><br />
+		<h3>Translation</h3>
+		At present, OES is delivered with English as the only language. If you wish the system to be set up in another language, you must perform the translation of textual content yourself.<br /><br />
+		All <i>public</i> textual content is held in a form which can be edited through the admin system. <strong>NOTE: The admin system itself is provided in English only and is not covered by the translation concepts outlined here.</strong><br /><br />
+		Most of the textual content is held in the content table including page text, error messages and email content, but further translatable content is available relating to:-
+		<ul>
+			<li>Pages - The page name (which, for public pages shows in the menu) and alt-text can be translated.</li>
+			<li>Races - The race name, race charity name, postal address and handling fee text can be translated. Additionally, a separate downloadable entry form URL can be specified for each language.</li>
+			<li>News - Each news item can be translated as required.</li>
+			<li>Forms - Each form name can be translated. This isn't necessary unless you set up multiple forms on one site as the form name is only displayed publically if there is more than one form set up.</li>
+			<li>Form Fields - The captions and memos displayed within an entry form can be translated.</li>
+		</ul>
+		The translation options can be found under the relevant maintenance options in the admin system. For example race names can be translated using the 'translate' option found on the right of each race under the race maintenance option.<br /><br />
+	</body>
+</html>

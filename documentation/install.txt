@@ -1,0 +1,32 @@
+* NOTE: As of OES3.0.3, the upgrade file contains all updates from 3.0.0, so you no longer need to apply 3.0.1, then 3.0.2 etc.
+If you already have a version of OES for PHP installed, you should download the oes3.x.x_upgrade.zip file as it only contains the files which have changed. See the upgrade.txt file for more information.
+
+Note: please ensure the register_globals option on your PHP installation is set to off. This should be the default on any recent installations. OES will not run correctly with the register_globals set to On. You can override the PHP setting by adding "php_register_globals off" to the .htaccess
+file in the OES root directory.
+
+1) Unzip the distribution file.
+2) FTP or copy the directory structure contents to your PHP server. After doing this, ensure that the
+		'includes/dbconfig.php' file has permissions that allow the installation routine to write to it.
+3) Navigate to admin.php in your browser. This will automatically detect that installation is required and
+		will prompt for installation parameters. The installation routine that runs depends on whether the OES
+		database already exists and, if it does, whether it is empty, contains a migrated copy of the Access
+		database from the ASP version of OES (see upgrade.txt) or whether it is an up-to-date version of the
+		database (copied from another PHP server for example).
+4) After the installation completes, you'll either be shown a status page describing what the installation
+		routine did and allowing you to proceed to the admin login page, or you'll be taken directly to the
+		admin login page.
+5) Login with username: admin and password: password.
+6) The administration menu is shown. You will need to work through the items from top to bottom as outlined in
+		the administration section of the user manual.
+7) After you're happy with the installation, you can set the permissions
+		of 'includes/dbconfig.php' so that it is no longer writable.
+8) If you are intending to use the Offline Admin Application, download that as well.
+9) When you're satisfied that everything is working correctly, you should remove the following scripts (these were only
+required during installation or are for debug purposes):-
+	databaseinstall.php
+	install.php
+	test.php
+	version_test.php
+
+TinyMCE and uploading images and files for the content management system
+If you want to use the functionality within TinyMCE to upload, manage and link to files on your web server, you need to edit the CONFIG_WEBSITE_DOCUMENT_ROOT setting within the scripts/tinymce/jscripts/tiny_mce/plugins/ajaxfilemanager/inc/config.base.php file. This should be set to the value produced by running the dirname(__FILE__) PHP statement in the root web directory of your server.

@@ -1,0 +1,457 @@
+.clear{
+	clear: both;
+	display: block;
+	height: 0px;
+	overflow: hidden;
+	line-height: 0px;
+	font-size: 0px;
+}
+
+html {
+	padding: 0px;
+	margin: 0px;
+	min-width: 760px;
+	height: 100%;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	background-color: #E4E9E6;
+}
+
+input {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	color: #EFA943;
+	text-align: left;
+}
+
+textarea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.mceContentBody  {
+	background-image: none;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+input.check {
+	margin: 0px;
+	padding: 0px;
+}
+
+img {
+	border: none;
+}
+
+.accessibility {
+	display: none;
+}
+
+#pagecontainer {
+	height: 100%;
+	margin: 10px;
+	padding: 0px;
+	display:inline;
+}
+
+#header {
+	text-align: center;
+	float: left;
+}
+
+#maincontainer {
+	width: 760px;
+	background-color: #FFFFFF;
+	text-align: left;
+	overflow: hidden;
+	margin: 0px auto;
+	border: thin;
+	border-style: solid;
+	border-color: #000000;
+}
+
+#windowcontainer {
+	width: 760px;
+	background-color: #FFFFFF;
+	text-align: left;
+	overflow: hidden;
+	margin: 0px auto;
+	border: thin;
+	border-style: solid;
+	border-color: #000000;
+}
+
+#banner {
+	float: left;
+	display: inline;
+}
+
+#langsel {
+	float: right;
+	margin-top: 5px;
+	margin-right: 10px;
+	display: block;
+}
+
+#menucolumn {
+	width: 15%;
+	float: left;
+	margin: 2%;
+	display: inline;
+	overflow: visible;
+}
+
+#contentcolumn {
+	width: 76%;
+	float: right;
+	margin: 2%;
+	display: inline;
+}
+
+#footer {
+	width: 760px;
+	text-align: left;
+	overflow: hidden;
+	margin:0 auto;
+	color: #333333;
+	background-color: #F0F0F0;
+	padding: 5px 0 5px 0;
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #000;
+}
+
+#windowfooter {
+	width: 760px;
+	text-align: left;
+	overflow: hidden;
+	margin:0 auto;
+	color: #333333;
+}
+
+.windowcontentcolumn0 {
+	width: 96%;
+	float: left;
+	margin: 2%;
+	position: relative;
+	display: inline;
+}
+
+.windowcontentcolumn1 {
+	width: 45%;
+	float: left;
+	margin: 2%;
+	position: relative;
+	display: inline;
+}
+
+.windowcontentcolumn2 {
+	width: 45%;
+	float: left;
+	margin: 2%;
+	position: relative;
+	display: inline;
+}
+
+.searchblock .windowcontentcolumn1 {
+	width: 52%;
+}
+
+.searchblock .windowcontentcolumn2 {
+	width: 40%;
+}
+
+.formsection {
+	width: 100%;
+	float: left;
+	margin-top: 5px;
+	position: relative;
+}
+
+.formsectionimage {
+	width: 40px;
+	float: left;
+	position: relative;
+}
+
+.formsectioncaption {
+	float: left;
+	margin-top: 8px;
+	margin-right: 10px;
+	position: relative;
+	font-weight: bold;
+	display:inline;
+}
+
+.formsectioncontent {
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+.formcaption {
+	width: 30%;
+	float: left;
+	margin-top: 5px;
+	position: relative;
+}
+
+.formfield {
+	width: 70%;
+	float: left;
+	margin-top: 5px;
+	position: relative;
+}
+
+.windowcontentcolumn0 .windowcontentcolumn0 .formcaption {
+	width: 15%;
+}
+
+.windowcontentcolumn0 .windowcontentcolumn0 .formfield {
+	width: 85%;
+}
+
+.subcontainer {
+	width: 500px;
+	padding: 5px;
+	background-color: #EEEEEE;
+	text-align: left;
+	border: thin;
+	border-style: solid;
+	border-color: #000000;
+}
+
+.sumcaption {
+	width: 25%;
+	float: left;
+	margin-top: 3px;
+	margin-left: 10px;
+	position: relative;
+	display:inline;
+}
+
+.sumfield {
+	width: 20%;
+	float: left;
+	text-align: right;
+	margin-top: 3px;
+	position: relative;
+	display:inline;
+}
+
+.floatleft {
+	float: left;
+	margin-top: 5px;
+	margin-right: 10px;
+	display: inline;
+}
+
+.floatright {
+	float: right;
+	margin-top: 5px;
+	margin-right: 10px;
+	display: inline;
+}
+
+.footerleft {
+	float: left;
+	margin-left: 10px;
+	display: inline;
+}
+
+.footerright {
+	float: right;
+	margin-right: 10px;
+	display: inline;
+}
+
+.footercentre {
+	text-align: center;
+}
+
+h1 {
+	font-size: 14px;
+	color: #EFA943;
+	text-align: left;
+}
+
+h2 {
+	font-size: 14px;
+	color: #EFA943;
+}
+
+h3 {
+	font-size: 11px;
+	color: #EFA943;
+	margin: 0px;
+}
+
+input {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+select {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+option {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.leftalign {
+	text-align: left;
+}
+
+.centrealign {
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+
+.stylered {
+	color: #FF0000;
+}
+
+.darkestgreybg {
+	background-color: #BBBBBB;
+}
+
+.darkergreybg {
+	background-color: #CCCCCC;
+}
+
+.darkgreybg {
+	background-color: #DDDDDD;
+}
+
+.greybg {
+	background-color: #EEEEEE;
+}
+
+.whitebg {
+	background-color: #FFFFFF;
+}
+
+.searchblock {
+	display: inline-table;
+	background-color: #EEEEEE;
+	width: 98%;
+	padding: 5px;
+}
+
+.buttonblock {
+	width: 98%;
+	padding: 5px;
+	text-align: center;
+}
+
+.button a {
+	font-size: 14px;
+	font-weight: bold;
+	width: 175px;
+	height: 16px;
+	padding: 10px;
+	border: solid;
+	border-width: 1px;
+	border-color: #333333;
+	text-decoration: none;
+	display: block;
+	vertical-align: middle;
+	text-align: left;
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+.button a:link, .button a:visited {
+	color: #333333;
+	background-color: #FF9933;
+}
+
+.button a:hover {
+	color: #333333;
+	background-color: #FFB953;
+}
+
+.smallbutton a {
+	width: 130px;
+	height: 14px;
+	padding: 1px;
+	border: solid;
+	border-width: 1px;
+	border-color: #333333;
+	text-decoration: none;
+	display: block;
+	vertical-align: middle;
+	text-align: left;
+	margin-top: 2px;
+	margin-right: 2px;
+}
+
+.smallbutton a:link, .smallbutton a:visited {
+	color: #333333;
+	background-color: #FF9933;
+}
+
+.smallbutton a:hover {
+	color: #333333;
+	background-color: #FFB953;
+}
+
+.buttonblock .button, .buttonblock .smallbutton {
+	float: left;
+}
+
+.smalltext {
+	font-size: 10px;
+}
+
+.whitebg .smalltext0 {
+	font-size: 10px;
+	background-color: #FFFFEE;
+}
+
+.greybg .smalltext0 {
+	font-size: 10px;
+	background-color: #EEEEDD;
+}
+
+.whitebg .smalltext1 {
+	font-size: 10px;
+	background-color: #FFEEFF;
+}
+.greybg .smalltext1 {
+	font-size: 10px;
+	background-color: #EEDDEE;
+}
+
+.largetext {
+	font-size: 16px;
+}
+
+.basket {
+	text-align: center;
+	margin-top: 30px;
+	border: solid 1px;
+}
+
+.basketheader {
+	background-color: #999999;
+	padding: 2px;
+}
+
+.basketinner {
+	margin: 2px;
+}
