@@ -17,16 +17,11 @@ if (empty($_SESSION['entrantid']) && !empty($_COOKIE['entrantid'])) {
 $currentSite = Site::findTheSite();
 Language::findCurrent($currentSite->languagecode);
 
-function __autoload($className) {
+spl_autoload_register(function($class) {
+	$class = strtolower($class);
+    include $class . '.php';
+});
 
-	$className = strtolower($className);
-	$fileName = "includes/{$className}.php";
-	if (file_exists($fileName)) {
-		require_once($fileName);
-	} else {
-		die("The file {$className}.php could not be found.");
-	}
-}
 
 function redirect_to($location = NULL) {
 	if ($location != NULL) {
@@ -282,14 +277,15 @@ function sendEntryEmail($contenttype, $entry, $race, $languagecode) {
 		$sitextlist = $content->text;
 		$content = array_shift($contents);
 		// Load up selected sales items
-		$salesitems = split(',', $entry->salesitems);
+		$salesitems = preg_split(',', $entry->salesitems);
 		foreach ($salesitems as $salesitem) {
 			$sitext = $content->text;
-			$sifields = split(';', $salesitem);
+			$sifields = preg_split(';', $salesitem);
 			$si = SalesItem::findByIdTranslated($sifields[0], $languagecode);
 			$sitext = str_replace("*SINAME", $si->name, $sitext);
 			$sitext = str_replace("*SIQTY", $sifields[2], $sitext);
-			$sitext = str_replace("*SIAMOUNT", money_format('%i', $sifields[2] * $si->price), $sitext);
+			$fmt = new NumberFormatter( 'en_US', NumberFormatter::CURRENCY );
+			$sitext = str_replace("*SIAMOUNT", $fmt->formatCurrency($sifields[2] * $si->price, 'USD'), $sitext);
 			$sitextlist .= $sitext. CRLF;
 		}
 	}

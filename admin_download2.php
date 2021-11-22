@@ -297,10 +297,10 @@ if ($_REQUEST['type'] == "paid") {
 			if (empty($entry->salesitems)) {
 				echo '<Cell><Data ss:Type="String"></Data></Cell>'. CRLF;	// Sales Items
 			} else {
-				$salesitems = split(',', $entry->salesitems);
+				$salesitems = preg_split(',', $entry->salesitems);
 				$sitext = "";
 				foreach ($salesitems as $salesitem) {
-					$sifields = split(';', $salesitem);
+					$sifields = preg_split(';', $salesitem);
 					$si = SalesItem::findByIdTranslated($sifields[0], $languagecode);
 					if (!empty($sitext)) {
 						$sitext .= ', ';

@@ -74,9 +74,9 @@ $extraJS = '';
 			$dbValue = substr($dbValue, 0, 10);
 		} elseif ($dbName == 'salesitems' && !empty($dbValue)) {
 			// Load up selected sales items
-			$salesitems = split(',', $dbValue);
+			$salesitems = preg_split(',', $dbValue);
 			foreach ($salesitems as $salesitem) {
-				$sifields = split(';', $salesitem);
+				$sifields = preg_split(';', $salesitem);
 				$p_params['si_'. $p_raceid. '_'. $sifields[0]] = true;
 				$extraJS .= 'toggleSalesItem('. $p_raceid. ', '. $sifields[0]. ', '. $sifields[3]. ', true);';
 				if ($sifields[3]) {

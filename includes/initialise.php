@@ -2,7 +2,8 @@
 require "lib/password.php";
 include('dbconfig.php');
 
-defined('MAGIC_QUOTES_ACTIVE') ? null : define('MAGIC_QUOTES_ACTIVE', get_magic_quotes_gpc());
+// defined('MAGIC_QUOTES_ACTIVE') ? null : define('MAGIC_QUOTES_ACTIVE', get_magic_quotes_gpc());
+defined('MAGIC_QUOTES_ACTIVE') ? null : define('MAGIC_QUOTES_ACTIVE', false);
 defined('REAL_ESCAPE_STRING_EXISTS') ? null : define('REAL_ESCAPE_STRING_EXISTS', function_exists('pdo_real_escape_string'));
 defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 defined('SITE_ROOT') ? null : define('SITE_ROOT', dirname($_SERVER['SCRIPT_FILENAME']). DS);

@@ -2915,7 +2915,7 @@ $result = pdo_query($sql) or die ("Error executing SQL: ". $sql. "<br />");
 
 $sql = "INSERT INTO `". DB_PREFIX. "sites`
 	(`id`, `title`, `url`, `smtpserver`, `smtpusername`, `smtppassword`, `downformaint`, `copyright`, `bannerimgurl`, `clubimgurl`, `newsimgurl`, `menucolour`, `menurocolour`, `menutextcolour`, `menutextrocolour`, `headingcolour`, `buttoncolour`, `buttonrocolour`, `buttontextcolour`, `buttontextrocolour`, `securesiteurl`, `paylogactive`, `languagecode`, `currencycode`, `googleanalyticscode`, `entrybcc`, `homepageid`, `emailfrom`)
-	VALUES(1, 'OES 3 for PHP', 'http://www.yoururl.com', '*NONE', '', '', 0, 'Your Club', 'images/site_banner.jpg', 'images/club_logo.gif', 'images/news.jpg', '', '', '', '', '', '', '', '', '', '*NONE', 0, 'en-gb', 'GBP', '*NONE', '*NONE', 1, '*NONE');";
+	VALUES(1, 'OES 4 for PHP', 'http://www.yoururl.com', '*NONE', '', '', 0, 'Your Club', 'images/site_banner.jpg', 'images/club_logo.gif', 'images/news.jpg', '', '', '', '', '', '', '', '', '', '*NONE', 0, 'en-gb', 'GBP', '*NONE', '*NONE', 1, '*NONE');";
 $result = pdo_query($sql) or die ("Error executing SQL: ". $sql. "<br />");
 
 $sql = "CREATE TABLE IF NOT EXISTS `". DB_PREFIX. "transfers` (
